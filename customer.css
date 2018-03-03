@@ -1,0 +1,32 @@
+body {
+    background-color:#F0F0F0;
+    background-image: url("brief.jpg");
+    background-repeat: no-repeat;
+
+    padding: 2em;
+    font-family: 'Raleway','Source Sans Pro', 'Arial';
+}
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+label {
+    display:block;
+    margin-bottom:10px;
+}
+input {
+    padding:10px;
+    width: 70%;
+    margin-bottom: 1em;
+}
+button {
+    margin: 2em 0;
+    padding: 1em 4em;
+    display:block;
+}
+
+
+#loader {
+    width: 100px;
+    display:none;
+}

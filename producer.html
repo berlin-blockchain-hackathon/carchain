@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+    <script src="../node_modules/web3/dist/web3.min.js"></script>
+    <style>
+
+    h1 { 
+       background-color: green;
+       color: white;
+    }
+    
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <h1>Car Production</h1>
+        <span id="firm_details"></span>       
+        <span id="countIns"></span>
+        <hr>
+ 
+ 
+        <h2>Produce single car</h2>
+ 
+
+        <img id="loader" src="https://loading.io/spinners/double-ring/lg.double-ring-spinner.gif">
+
+        <label for="carAdr" class="col-lg-2 control-label">Blockchain Adresse</label>
+        <input id="carAdr" type="text">
+
+        <label for="carType" class="col-lg-2 control-label">Typ </label>
+        <input id="carType" type="text">
+
+        <label for="carSerial" class="col-lg-2 control-label">Fahrgestellnummer</label>
+        <input id="carSerial" type="text">
+
+        <button id="button1">Produce Item</button>
+
+       <hr>
+       <hr>
+
+        <h2>Car Details by Blockchain Address</h2>
+ 
+        <img id="qr" src='https://chart.googleapis.com/chart?cht=qr&chl=0x7a701451dC7aE33c23a5349B378c6950a8044f0E&chs=180x180&choe=UTF-8&chld=L|2' alt='qr code'>
+              
+        <div>
+        <span id="carDetails"></span>
+        <span id="carDetails1"></span>
+        <span id="carDetails2"></span>
+        <span id="carDetails3"></span>
+        <span id="carDetails4"></span>
+        <span id="carDetails5"></span>
+			</div>
+
+
+
+        <span id="productCharge"></span>
+        <span id="productPZN"></span>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+    <script>
+        if (typeof web3 !== 'undefined') {
+            web3 = new Web3(web3.currentProvider);
+        } else {
+            // set the provider you want from Web3.providers
+            web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:3000"));
+        }
+
+        web3.eth.defaultAccount = web3.eth.accounts[0];
+
+       
+        var MyContract = web3.eth.contract([
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getNoOfCars",
+		"outputs": [
+			{
+				"name": "retno",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "aFirmAdr",
+				"type": "address"
+			}
+		],
+		"name": "displayFirm",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			},
+			{
+				"name": "",
+				"type": "bytes32"
+			},
+			{
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "aCarAdr",
+				"type": "address"
+			}
+		],
+		"name": "displayCar",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			},
+			{
+				"name": "",
+				"type": "bytes32"
+			},
+			{
+				"name": "",
+				"type": "bytes32"
+			},
+			{
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "aCarAdr",
+				"type": "address"
+			},
+			{
+				"name": "aCarType",
+				"type": "bytes32"
+			},
+			{
+				"name": "aCarSerial",
+				"type": "bytes32"
+			}
+		],
+		"name": "registerCar",
+		"outputs": [
+			{
+				"name": "_noOfCars",
+				"type": "uint32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "aFirmName",
+				"type": "bytes32"
+			},
+			{
+				"name": "aFirmLocation",
+				"type": "bytes32"
+			},
+			{
+				"name": "aFirmStreet",
+				"type": "bytes32"
+			},
+			{
+				"name": "aFirmType",
+				"type": "uint8"
+			}
+		],
+		"name": "registerFirm",
+		"outputs": [
+			{
+				"name": "retno",
+				"type": "uint32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "aCarAdr",
+				"type": "address"
+			},
+			{
+				"name": "_to",
+				"type": "address"
+			}
+		],
+		"name": "sellCar",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	}
+]);
+
+     var CarChain = MyContract.at('0xebf00f1cf30ecaaf3625893ce4ca2209aa61ff20');
+        console.log(CarChain);
+
+     $("#qr").hide(); 
+  
+    
+     CarChain.getNoOfCars((err, res) => {
+           if (res)
+            $("#countIns").html( 'Cars Registered: '+ res.c );
+           });
+     
+ 
+ 
+ 
+    CarChain.displayFirm(("0x46aed27379c94784160b56b89ee1564de0cf11db"),(err, res3) => {
+           if (res3) {
+                $("#firm_details").html( 
+                  '   Producer:  '   +   web3.toAscii(res3[0]) + 
+                  '   City:      '   +   web3.toAscii(res3[1]) + 
+                  '   Street:    '   +   web3.toAscii(res3[2]) +
+                    '<br> <br>'
+                  );
+           }  
+        });   
+
+ 
+ 
+ 
+    CarChain.displayCar(("0x7a701451dC7aE33c23a5349B378c6950a8044f0E"),(err, res3) => {
+           if (res3) {
+                $("#carDetails1").html( 
+                  'Adr: 0x7a701451dC7aE33c23a5349B378c6950a8044f0E'+ 
+                  '   Hersteller : '+   web3.toAscii(res3[0]) + 
+                  '   Typ:      '   +   web3.toAscii(res3[2]) + 
+                  '   Serie:    '   +   web3.toAscii(res3[3]) +
+                  '   Besitzer: '   +   web3.toAscii(res3[1]) +
+                  '<br> <br>'
+                  );
+           }  
+        });   
+        
+     CarChain.displayCar(("0xf4B02651b117f0EfeB853127A78bA958eB74FAe0"),(err, res3) => {
+           if (res3) {
+                $("#carDetails2").html( 
+                  'Adr: 0xf4B02651b117f0EfeB853127A78bA958eB74FAe0'+ 
+                  ' Hersteller : '+   web3.toAscii(res3[0]) + 
+                  '   Typ:      ' +   web3.toAscii(res3[2]) + 
+                  '   Serie:    ' +   web3.toAscii(res3[3]) +
+                  '   Besitzer: ' +   web3.toAscii(res3[1]) +
+                  '<br> <br>'
+                  );
+           }  
+        });   
+        
+    CarChain.displayCar(("0x4B20f638da74193c9B6c84E134d784C54a3aE5Be"),(err, res3) => {
+           if (res3) {
+                $("#carDetails3").html( 
+                  'Adr: 0x4B20f638da74193c9B6c84E134d784C54a3aE5Be'+ 
+                  '   Hersteller : '+   web3.toAscii(res3[0]) + 
+                  '   Typ:      ' +   web3.toAscii(res3[2]) + 
+                  '   Serie:    ' +   web3.toAscii(res3[3]) +
+                  '   Besitzer: ' +   web3.toAscii(res3[1]) +
+                  '<br> <br>'
+                  );
+           }  
+        });   
+         
+     CarChain.displayCar(("0xC548EA01f579638FC872DA77ae61f97508EAecB2"),(err, res3) => {
+           if (res3) {
+                $("#carDetails4").html( 
+                  'Adr: 0xC548EA01f579638FC872DA77ae61f97508EAecB2'+ 
+                  '   Hersteller : '+   web3.toAscii(res3[0]) + 
+                  '   Typ:      ' +   web3.toAscii(res3[2]) + 
+                  '   Serie:    ' +   web3.toAscii(res3[3]) +
+                  '   Besitzer: ' +   web3.toAscii(res3[1]) +
+                  '<br> <br>'
+                  );
+           }  
+        });         
+
+     CarChain.displayCar(("0xd3E906CA20D9A8B0C21B9eA9651067c4D6F885ED"),(err, res3) => {
+           if (res3) {
+                $("#carDetails5").html( 
+                  'Adr: 0xd3E906CA20D9A8B0C21B9eA9651067c4D6F885ED'+ 
+                  '    Hersteller : '+   web3.toAscii(res3[0]) + 
+                  '   Typ:      ' +   web3.toAscii(res3[2]) + 
+                  '   Serie:    ' +   web3.toAscii(res3[3]) +
+                  '   Besitzer: ' +   web3.toAscii(res3[1]) +
+                  '<br> <br>'
+                  );
+           }  
+        });         
+        
+     
+
+        
+     
+    $("#button1").click(
+    	function() {
+    		
+    		CarChain.registerCar($("#carAdr").val(), $("#carType").val(),$("#carSerial").val(), (err, res) => {
+			$("#loader").show();        	
+        		if (err) 
+            	$("#loader").hide();
+      	});
+    });
+         
+     
+         
+       
+    
+    </script>
+
+</body>
+</html>
