@@ -1,0 +1,404 @@
+[
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "carAccts",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "aCarAdr",
+				"type": "address"
+			}
+		],
+		"name": "displayCar",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			},
+			{
+				"name": "",
+				"type": "bytes32"
+			},
+			{
+				"name": "",
+				"type": "bytes32"
+			},
+			{
+				"name": "",
+				"type": "bytes32"
+			},
+			{
+				"name": "",
+				"type": "bytes32"
+			},
+			{
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "aFirmAdr",
+				"type": "address"
+			}
+		],
+		"name": "displayFirm",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			},
+			{
+				"name": "",
+				"type": "bytes32"
+			},
+			{
+				"name": "",
+				"type": "bytes32"
+			},
+			{
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "firmAccts",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "aCarAdr",
+				"type": "address"
+			},
+			{
+				"name": "_noEntries",
+				"type": "uint32"
+			}
+		],
+		"name": "getPart",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			},
+			{
+				"name": "",
+				"type": "bytes32"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getNoOfFirms",
+		"outputs": [
+			{
+				"name": "retno",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getNoOfCars",
+		"outputs": [
+			{
+				"name": "retno",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "aCarAdr",
+				"type": "address"
+			},
+			{
+				"name": "_noEntries",
+				"type": "uint32"
+			}
+		],
+		"name": "getMilage",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint32"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "counter",
+				"type": "uint256"
+			}
+		],
+		"name": "getCarAdr",
+		"outputs": [
+			{
+				"name": "retno",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "counter",
+				"type": "uint256"
+			}
+		],
+		"name": "getFirmAdr",
+		"outputs": [
+			{
+				"name": "retno",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "aCarAdr",
+				"type": "address"
+			},
+			{
+				"name": "_partNo",
+				"type": "bytes32"
+			},
+			{
+				"name": "_partType",
+				"type": "bytes32"
+			}
+		],
+		"name": "setPart",
+		"outputs": [
+			{
+				"name": "_noEntries",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "eCarAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "eType",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"name": "eSerial",
+				"type": "bytes32"
+			}
+		],
+		"name": "carInfo",
+		"type": "event"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "aCarAdr",
+				"type": "address"
+			},
+			{
+				"name": "_to",
+				"type": "address"
+			}
+		],
+		"name": "sellCar",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "aFirmName",
+				"type": "bytes32"
+			},
+			{
+				"name": "aFirmLocation",
+				"type": "bytes32"
+			},
+			{
+				"name": "aFirmStreet",
+				"type": "bytes32"
+			},
+			{
+				"name": "aFirmType",
+				"type": "uint8"
+			}
+		],
+		"name": "registerFirm",
+		"outputs": [
+			{
+				"name": "retno",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "aCarAdr",
+				"type": "address"
+			},
+			{
+				"name": "aCarType",
+				"type": "bytes32"
+			},
+			{
+				"name": "aCarSerial",
+				"type": "bytes32"
+			}
+		],
+		"name": "registerCar",
+		"outputs": [
+			{
+				"name": "_noOfCars",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "eName",
+				"type": "bytes32"
+			}
+		],
+		"name": "firmInfo",
+		"type": "event"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "aCarAdr",
+				"type": "address"
+			},
+			{
+				"name": "miles",
+				"type": "uint32"
+			}
+		],
+		"name": "setMilage",
+		"outputs": [
+			{
+				"name": "_noEntries",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]

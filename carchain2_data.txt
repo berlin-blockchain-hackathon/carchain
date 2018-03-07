@@ -1,0 +1,88 @@
+======InjectedWeb3======InjectedWeb3======InjectedWeb3======InjectedWeb3======
+joerasa2018
+
+Contract Adr
+0xfb586e1bcd9090e92a4720189a41a82bff165fe2
+
+Contract Owner 
+0x46aed27379c94784160b56b89ee1564de0cf11db
+
+
+create 1. firm Volkswagen
+Account firm1 VW 0x46aed27379c94784160b56b89ee1564de0cf11db
+registerfirm
+"Volkswagen","Wolfsburg","Hauptwerk 1",1
+
+
+Account firm1 VW 0x46a
+Display Firm
+"0x46aed27379c94784160b56b89ee1564de0cf11db"
+
+Account firm1 VW 0x46a
+RegisterCar 
+"0x7a701451dC7aE33c23a5349B378c6950a8044f0E","Golf3","A1234567890001"
+"0xf4B02651b117f0EfeB853127A78bA958eB74FAe0","Phaeton","A1234567890002"
+
+Account firm1 VW 0x46a
+DisplayCar 
+"0x7a701451dC7aE33c23a5349B378c6950a8044f0E"
+
+
+
+
+Account firm2 Audi 0x5380648921ea32a346963db85ca846d1d95d3056
+registerfirm
+"Audi","Mücnhen","Audiplatz 1",1
+
+Account egal
+Display Firm2 Audi 
+"0x5380648921ea32a346963db85ca846d1d95d3056"
+
+set part
+"0x7a701451dC7aE33c23a5349B378c6950a8044f0E", "A111111111","Bremszylinder"
+"0x7a701451dC7aE33c23a5349B378c6950a8044f0E", "B222222222","Airbag"
+"0x7a701451dC7aE33c23a5349B378c6950a8044f0E", "C222222223","Frontscheibe"
+
+Account firm1 0x46a
+SellCar   (to firm2)
+"0x7a701451dC7aE33c23a5349B378c6950a8044f0E","0x5380648921ea32a346963db85ca846d1d95d3056"
+
+
+ Dealer 1 0xe9999aC41a770FF011F23a91998B61B965b18B6D
+
+
+
+
+
+Memory
+
+"Volkswagen","Wolfsburg","Hauptwerk 1",1
+
+
+registerCar
+"0x583031d1113ad414f02576bd6afabfb302140225","Golf3","A1234567890001"
+"0xdd870fa1b7c4700f2bd7f44238821c26f7392148","Golf3","A1234567890002"
+
+set milage
+"0x583031d1113ad414f02576bd6afabfb302140225", 1000
+"0xdd870fa1b7c4700f2bd7f44238821c26f7392148", 1111
+
+get milage
+"0x583031d1113ad414f02576bd6afabfb302140225", 1
+"0xdd870fa1b7c4700f2bd7f44238821c26f7392148", 1
+
+set part
+"0xdd870fa1b7c4700f2bd7f44238821c26f7392148", "A111111111","Bremszylinder"
+"0xdd870fa1b7c4700f2bd7f44238821c26f7392148", "B222222222","Airbag"
+"0xdd870fa1b7c4700f2bd7f44238821c26f7392148", "C222222223","Frontscheibe"
+
+
+"0xdd870fa1b7c4700f2bd7f44238821c26f7392148", 0
+
+
+set part
+"0x583031d1113ad414f02576bd6afabfb302140225", "1111111119","aaaaaaaaaa"
+"0x583031d1113ad414f02576bd6afabfb302140225", "222222222","bbbbbbbbbb"
+"0x583031d1113ad414f02576bd6afabfb302140225", "222222223","bbbbbbbbbc"
+"0x583031d1113ad414f02576bd6afabfb302140225", 0
+  

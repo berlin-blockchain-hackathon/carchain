@@ -1,0 +1,18 @@
+joerasa2018
+chuckle asset wing gadget robot deal reason dragon muscle help head recipe
+
+light server starten
+cd coursetro-eth
+sudo npm run dev
+
+
+in browser 
+http://localhost:3000/
+http://192.168.178.31:3000
+
+
+web3.eth.accounts
+["0x46aed27379c94784160b56b89ee1564de0cf11db"]
+
+
+infura node

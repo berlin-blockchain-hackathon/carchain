@@ -4,24 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Car Production</title>
+    <title>Car Licence</title>
 
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="customer.css">
+  
 
     <script src="../node_modules/web3/dist/web3.min.js"></script>
     <style>
 
     h1 { 
-       background-color: green;
+       background-color: orange;
        color: white;
     }
     
+    .grid-container {
+     display: grid;
+       grid-template-columns: 100px 380px 270px;
+       grid-template-rows: 170px 50px 40px 40px 20px 80px 175px 35px 30px 90px 430px;
+       grid-gap: 2px;
+     padding: 10px;
+    }
+    .grid-container > div {
+     background-color: rgba(255, 255, 255, 0.1);
+     text-align: left;
+     padding: 20px 0 30px
+    }
 
     </style>
-
+    
     <style>
        table {
-        width:100%;
+        width:50%;
        }
        table, th, td {
            border: 1px solid black;
@@ -46,115 +59,122 @@
        color: white;
        }
     </style>
-
+    
+    
+    
 </head>
 
 <body>
+
+
+
+
     <div class="container">
 
-        <h1>Car Production</h1>
-        <span id="firm_details"></span> 
-        
-        
-  <table id="t02">
-   <tr>
-    <td id="tbl02xA1"></td>
-    <td id="tbl02xB1"></td>
-    <td id="tbl02xC1"></td>
-    <td id="tbl02xD1"></td>
-  </tr>
- </table>
-              
-        <span id="countIns"></span>
-  
-        <h2>Produce single car</h2>
- 
-
-        <img id="loader" src="https://loading.io/spinners/double-ring/lg.double-ring-spinner.gif">
-
-        <label for="carAdr" class="col-lg-2 control-label">Blockchain Adresse</label>
-        <input id="carAdr" type="text">
-
-        <label for="carType" class="col-lg-2 control-label">Typ </label>
-        <input id="carType" type="text">
-
-        <label for="carSerial" class="col-lg-2 control-label">Fahrgestellnummer</label>
-        <input id="carSerial" type="text">
-
-        <button id="button1">Produce Item</button>
+        <h1>Demo Car Blockchain Customer Portal</h1>
 
        <hr>
+ 
+        <label for="myAddress" class="col-lg-2 control-label">Car Details by Blockchain Address</label>
+        <input id="myAddress" type="text">
+        <button id="button3">Display  Item by address </button>    
+             
+        
+        <span id="carDetails"></span>
+    </div>
+
+<div class="grid-container">
+  <div></div>
+  <div></div>
+  <div></div>  
+
+  <div id="nuber_plate"></div>
+  <div></div>
+  <div> </div>  
+
+  <div></div>   
+  <div id="owners_name"></div>   
+  <div></div>    
+ 
+  <div id="firstname"> </div>
+  <div></div>
+  <div> </div>  
+
+  <div></div>   
+  <div id="owners_city"></div>   
+  <div></div> 
      
+  <div></div> 
+  <div id="owners_street"></div>   
+  <div></div>   
 
-        <h2>Car Details by Blockchain Address</h2>
- 
-        <img id="qr" src='https://chart.googleapis.com/chart?cht=qr&chl=0x7a701451dC7aE33c23a5349B378c6950a8044f0E&chs=180x180&choe=UTF-8&chld=L|2' alt='qr code'>
-              
-        <div>
-          <span id="carDetails"></span>
-          <span id="carDetails1"></span>
-          <span id="carDetails2"></span>
-          <span id="carDetails3"></span>
-          <span id="carDetails4"></span>
-          <span id="carDetails5"></span>
-			</div>
+  <div></div>   
+  <img id="qrCar" src='https://chart.googleapis.com/chart?cht=qr&chl=0x&chs=120x120&choe=UTF-8&chld=L|2' alt='qr code'> 
+   
+  <div></div> 
+  
+     
+  <div id="car_addr"> </div>   
+  <div></div> 
+  <div></div> 
+
+  <div></div>   
+  <div id="car_maker"></div>   
+  <div></div> 
+
+  <div></div> 
+  <div id="car_type"></div> 
+  <div id="maker_remark"></div>   
+  
  
 
+  <div></div>   
+  <div id="car_serial"></div>   
+  <div></div> 
+
+
+</div>
+
+<h2>Speedometer</h2>
+<span id="carDetails2"></span>
+ 
 <table id="t01">
   <tr>
-    <th>Address</th>
-    <th>Producer</th> 
-    <th>Type</th>
-    <th>Serial</th>
-    <th>Owner</th>
-
+    <th>Entry</th>
+    <th>Date</th>
+    <th>Tacho </th> 
   </tr>
   <tr>
     <td id="tbl01xA1"></td>
     <td id="tbl01xB1"></td>
     <td id="tbl01xC1"></td>
-    <td id="tbl01xD1"></td>
-    <td id="tbl01xE1"></td>  
+ 
   </tr>
   <tr>
     <td id="tbl01xA2"></td>
     <td id="tbl01xB2"></td>
     <td id="tbl01xC2"></td>
-    <td id="tbl01xD2"></td>
-    <td id="tbl01xE2"></td>  
   </tr>
   <tr>
     <td id="tbl01xA3"></td>
     <td id="tbl01xB3"></td>
     <td id="tbl01xC3"></td>
-    <td id="tbl01xD3"></td>
-    <td id="tbl01xE3"></td>  
+ 
   </tr>
   <tr>
     <td id="tbl01xA4"></td>
     <td id="tbl01xB4"></td>
     <td id="tbl01xC4"></td>
-    <td id="tbl01xD4"></td>
-    <td id="tbl01xE4"></td>  
-  </tr>
+   </tr>
   <tr>
     <td id="tbl01xA5"></td>
     <td id="tbl01xB5"></td>
     <td id="tbl01xC5"></td>
-    <td id="tbl01xD5"></td>
-    <td id="tbl01xE5"></td>  
   </tr>
 
 
 
 </table>
-
-
-
-
-   </div>
-
-
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -168,9 +188,9 @@
         }
 
         web3.eth.defaultAccount = web3.eth.accounts[0];
+
        
-       
-        var MyContract = web3.eth.contract([
+         var MyContract = web3.eth.contract([
 	{
 		"constant": true,
 		"inputs": [
@@ -577,117 +597,138 @@
 
      var CarChain = MyContract.at('0xfb586e1bcd9090e92a4720189a41a82bff165fe2');
   
-     var car01 = '0x7a701451dC7aE33c23a5349B378c6950a8044f0E';
-     var car02 = '0xf4B02651b117f0EfeB853127A78bA958eB74FAe0';
-     var car03 = '0x4B20f638da74193c9B6c84E134d784C54a3aE5Be';
-     var car04 = '0xC548EA01f579638FC872DA77ae61f97508EAecB2';
-     var car05 = '0xd3E906CA20D9A8B0C21B9eA9651067c4D6F885ED';
-   
+     $("#qrCar").hide(); 
      
+     var entryNo=0;
+     
+        
          
-    var firm01 = '0x46aed27379c94784160b56b89ee1564de0cf11db';
-      
-
-  
-     $("#qr").hide(); 
-  
-    
-    
-    CarChain.getFirmAdr((0),(err, res3) => {
-           if (res3) {
-               myAcc= web3.eth.defaultAccount;
-               $("#tbl02xA1").html(myAcc);
-                 
-           }  
-        });   
-        
-        
-    
-    CarChain.displayFirm((firm01),(err, res3) => {
-           if (res3) {
-                  //$("#tbl02xA1").html( firm01 );   
-                  $("#tbl02xB1").html( web3.toAscii(res3[0]) );   
-                  $("#tbl02xC1").html( web3.toAscii(res3[1]) );   
-                  $("#tbl02xD1").html( web3.toAscii(res3[2]) );   
-                     
-           }  
-        });   
-
- 
- 
-    CarChain.displayCar((car01),(err, res3) => {
-           if (res3) {
-                 $("#tbl01xA1").html( car01 );   
-                 $("#tbl01xB1").html( web3.toAscii(res3[0]) );   
-                 $("#tbl01xC1").html( web3.toAscii(res3[4]) );   
-                 $("#tbl01xD1").html( web3.toAscii(res3[5]) );   
-                 $("#tbl01xE1").html( web3.toAscii(res3[1]) );                    
-           }  
-        });   
-
-    CarChain.displayCar((car02),(err, res3) => {
-           if (res3) {
-                 $("#tbl01xA2").html( car02 );   
-                 $("#tbl01xB2").html( web3.toAscii(res3[0]) );   
-                 $("#tbl01xC2").html( web3.toAscii(res3[4]) );   
-                 $("#tbl01xD2").html( web3.toAscii(res3[5]) );   
-                 $("#tbl01xE2").html( web3.toAscii(res3[1]) );                    
-           }  
-        });   
-
-    CarChain.displayCar((car03),(err, res3) => {
-           if (res3) {
-                 $("#tbl01xA3").html( car03 );   
-                 $("#tbl01xB3").html( web3.toAscii(res3[0]) );   
-                 $("#tbl01xC3").html( web3.toAscii(res3[4]) );   
-                 $("#tbl01xD3").html( web3.toAscii(res3[5]) );   
-                 $("#tbl01xE3").html( web3.toAscii(res3[1]) );                    
-           }  
-        });   
-
-    CarChain.displayCar((car04),(err, res3) => {
-           if (res3) {
-                 $("#tbl01xA4").html( car04 );   
-                 $("#tbl01xB4").html( web3.toAscii(res3[0]) );   
-                 $("#tbl01xC4").html( web3.toAscii(res3[4]) );   
-                 $("#tbl01xD4").html( web3.toAscii(res3[5]) );   
-                 $("#tbl01xE4").html( web3.toAscii(res3[1]) );                    
-           }  
-        });   
-
-   CarChain.displayCar((car05),(err, res3) => {
-           if (res3) {
-                 $("#tbl01xA5").html( car05 );   
-                 $("#tbl01xB5").html( web3.toAscii(res3[0]) );   
-                 $("#tbl01xC5").html( web3.toAscii(res3[4]) );   
-                 $("#tbl01xD5").html( web3.toAscii(res3[5]) );   
-                 $("#tbl01xE5").html( web3.toAscii(res3[1]) );  
-                 
-           }  
-        });   
-
-
-        
-  
-     
-
-        
-     
-    $("#button1").click(
-    	function() {
-    		
-    		CarChain.registerCar($("#carAdr").val(), $("#carType").val(),$("#carSerial").val(), (err, res) => {
-			$("#loader").show();  			      	
-        		if (err) 
-            	$("#loader").hide();
-      	});
-    });
-         
-     
-         
+            
        
+     $("#button3").click(function() {       
+        CarChain.displayCar($("#myAddress").val(),(err, res3) => {
+           if (res3) {
+                $("#carDetails").html( 
+     
+                  );
+                
+				  	document.getElementById("car_addr").innerHTML =      $("#myAddress").val();
+				  	document.getElementById("car_maker").innerHTML =     web3.toAscii(res3[0]);
+				 	document.getElementById("car_type").innerHTML =      web3.toAscii(res3[4]);
+				 	document.getElementById("car_serial").innerHTML =    web3.toAscii(res3[5]);
+				 	document.getElementById("owners_name").innerHTML =   web3.toAscii(res3[1]);
+			   	document.getElementById("owners_city").innerHTML =   web3.toAscii(res3[2]); 
+               document.getElementById("owners_street").innerHTML = web3.toAscii(res3[3]); 
+               document.getElementById("maker_remark").innerHTML =  web3.toAscii(res3[0]) + ' AG Germany'; 
+                
+                $("#qrCar").attr("src", "https://chart.googleapis.com/chart?cht=qr&chl=" + $("#myAddress").val() + "&chs=130x130&choe=UTF-8&chld=L|");
+                $("#qrCar").show();  
+  
+  
+           }  
+        }); 
+        
+        
+    //Milage table/////////////////////////////////////////
+        
+        CarChain.displayCar($("#myAddress").val(),(err, res3) => {
+           if (res3) {
+                $("#carDetails2").html( 
+     					   'your car '+   web3.toAscii(res3[4]) +' serial number '+  web3.toAscii(res3[5]) + ' has registered the following milage entries: <br><br>' 
+                 ); 
+           }  
+        }); 		   
+
+ 
+        
+        
+        entryNo=0;
+   
+        CarChain.getMilage($("#myAddress").val(),entryNo,(err, res) => {
+           if (res) {
+                 $("#tbl01xA1").html(' ' + 0);   
+                 var dateTime = new Date(res[1]*1000);                 
+                 if (res[1] !=0) {
+                    $("#tbl01xB1").html( dateTime.toLocaleDateString()); 
+                    $("#tbl01xC1").html(' ' + res[0] +' km');  
+                 } else {
+                   $("#tbl01xB1").html( '---'); 
+                   $("#tbl01xC1").html('---'); 
+                 }
+          }  
+        });   
+        entryNo++;
+
+        CarChain.getMilage($("#myAddress").val(),entryNo,(err, res) => {
+           if (res) {
+                 $("#tbl01xA2").html(' ' + 1);   
+                 var dateTime = new Date(res[1]*1000);                 
+                 if (res[1] !=0) {
+                    $("#tbl01xB2").html( dateTime.toLocaleDateString()); 
+                    $("#tbl01xC2").html(' ' + res[0] +' km');  
+                 } else {
+                   $("#tbl01xB2").html( '---'); 
+                   $("#tbl01xC2").html('---'); 
+                 }
+                 
+                    
+           }  
+        });   
+        entryNo++;
+
+        CarChain.getMilage($("#myAddress").val(),entryNo,(err, res) => {
+           if (res) {
+                 $("#tbl01xA3").html(' ' + 2);   
+                 var dateTime = new Date(res[1]*1000);                 
+                 if (res[1] !=0) {
+                    $("#tbl01xB3").html( dateTime.toLocaleDateString()); 
+                    $("#tbl01xC3").html(' ' + res[0] +' km');  
+                 } else {
+                   $("#tbl01xB3").html( '---'); 
+                   $("#tbl01xC3").html('---'); 
+                 }
+           }  
+        });   
+        entryNo++;
+
+        CarChain.getMilage($("#myAddress").val(),entryNo,(err, res) => {
+           if (res) {
+                 $("#tbl01xA4").html(' ' + 3);   
+                 var dateTime = new Date(res[1]*1000);                 
+                 if (res[1] !=0) {
+                    $("#tbl01xB4").html( dateTime.toLocaleDateString()); 
+                    $("#tbl01xC4").html(' ' + res[0] +' km');  
+                 } else {
+                   $("#tbl01xB4").html( '---'); 
+                   $("#tbl01xC4").html('---'); 
+                 }         
+           }  
+        });   
+        entryNo++;
+
+       CarChain.getMilage($("#myAddress").val(),entryNo,(err, res) => {
+           if (res) {
+                 $("#tbl01xA5").html(' ' + 4);   
+                 var dateTime = new Date(res[1]*1000);                 
+                 if (res[1] !=0) {
+                    $("#tbl01xB5").html( dateTime.toLocaleDateString()); 
+                    $("#tbl01xC5").html(' ' + res[0] +' km');  
+                 } else {
+                   $("#tbl01xB5").html( '---'); 
+                   $("#tbl01xC5").html('---'); 
+                 }
+           }  
+        });   
+        entryNo++;
+
+
+       
+
+         
+     });      
     
     </script>
-
+    
+    
 </body>
 </html>
