@@ -20,7 +20,7 @@
     .grid-container {
      display: grid;
        grid-template-columns: 100px 380px 270px;
-       grid-template-rows: 170px 50px 40px 40px 20px 80px 175px 35px 30px 90px 430px;
+       grid-template-rows: 170px 20px 30px 40px 40px 20px 80px 175px 35px 30px 85px 430px;
        grid-gap: 2px;
      padding: 10px;
     }
@@ -88,16 +88,21 @@
   <div></div>
   <div></div>  
 
-  <div id="nuber_plate"></div>
   <div></div>
+  <div id="number_plate"></div>
   <div> </div>  
+
+  <div></div>
+  <div id="production_date"></div>
+  <div></div>  
+
 
   <div></div>   
   <div id="owners_name"></div>   
   <div></div>    
  
-  <div id="firstname"> </div>
   <div></div>
+  <div id="firstname"> </div>
   <div> </div>  
 
   <div></div>   
@@ -170,6 +175,33 @@
     <td id="tbl01xA5"></td>
     <td id="tbl01xB5"></td>
     <td id="tbl01xC5"></td>
+  </tr>
+  <tr>
+    <td id="tbl01xA6"></td>
+    <td id="tbl01xB6"></td>
+    <td id="tbl01xC6"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl01xA7"></td>
+    <td id="tbl01xB7"></td>
+    <td id="tbl01xC7"></td>
+  </tr>
+  <tr>
+    <td id="tbl01xA8"></td>
+    <td id="tbl01xB8"></td>
+    <td id="tbl01xC8"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl01xA9"></td>
+    <td id="tbl01xB9"></td>
+    <td id="tbl01xC9"></td>
+   </tr>
+  <tr>
+    <td id="tbl01xA10"></td>
+    <td id="tbl01xB10"></td>
+    <td id="tbl01xC10"></td>
   </tr>
 
 
@@ -620,6 +652,9 @@
 			   	document.getElementById("owners_city").innerHTML =   web3.toAscii(res3[2]); 
                document.getElementById("owners_street").innerHTML = web3.toAscii(res3[3]); 
                document.getElementById("maker_remark").innerHTML =  web3.toAscii(res3[0]) + ' AG Germany'; 
+               
+               document.getElementById("number_plate").innerHTML =    'not yet assigned';
+
                 
                 $("#qrCar").attr("src", "https://chart.googleapis.com/chart?cht=qr&chl=" + $("#myAddress").val() + "&chs=130x130&choe=UTF-8&chld=L|");
                 $("#qrCar").show();  
@@ -650,6 +685,8 @@
                  var dateTime = new Date(res[1]*1000);                 
                  if (res[1] !=0) {
                     $("#tbl01xB1").html( dateTime.toLocaleDateString()); 
+                    $("#production_date").html( dateTime.toLocaleDateString()); 
+                     
                     $("#tbl01xC1").html(' ' + res[0] +' km');  
                  } else {
                    $("#tbl01xB1").html( '---'); 
@@ -720,9 +757,84 @@
            }  
         });   
         entryNo++;
+        
+       CarChain.getMilage($("#myAddress").val(),entryNo,(err, res) => {
+           if (res) {
+                 $("#tbl01xA6").html(' ' + 5);   
+                 var dateTime = new Date(res[1]*1000);                 
+                 if (res[1] !=0) {
+                    $("#tbl01xB6").html( dateTime.toLocaleDateString()); 
+                    $("#tbl01xC6").html(' ' + res[0] +' km');  
+                 } else {
+                   $("#tbl01xB6").html( '---'); 
+                   $("#tbl01xC6").html('---'); 
+                 }
+           }  
+        });   
+        entryNo++;
 
+        
 
+       CarChain.getMilage($("#myAddress").val(),entryNo,(err, res) => {
+           if (res) {
+                 $("#tbl01xA7").html(' ' + 6);   
+                 var dateTime = new Date(res[1]*1000);                 
+                 if (res[1] !=0) {
+                    $("#tbl01xB7").html( dateTime.toLocaleDateString()); 
+                    $("#tbl01xC7").html(' ' + res[0] +' km');  
+                 } else {
+                   $("#tbl01xB7").html( '---'); 
+                   $("#tbl01xC7").html('---'); 
+                 }
+           }  
+        });   
+        entryNo++;
+
+       CarChain.getMilage($("#myAddress").val(),entryNo,(err, res) => {
+           if (res) {
+                 $("#tbl01xA8").html(' ' + 7);   
+                 var dateTime = new Date(res[1]*1000);                 
+                 if (res[1] !=0) {
+                    $("#tbl01xB8").html( dateTime.toLocaleDateString()); 
+                    $("#tbl01xC8").html(' ' + res[0] +' km');  
+                 } else {
+                   $("#tbl01xB8").html( '---'); 
+                   $("#tbl01xC8").html('---'); 
+                 }
+           }  
+        });   
+        entryNo++;
        
+
+       CarChain.getMilage($("#myAddress").val(),entryNo,(err, res) => {
+           if (res) {
+                 $("#tbl01xA9").html(' ' + 8);   
+                 var dateTime = new Date(res[1]*1000);                 
+                 if (res[1] !=0) {
+                    $("#tbl01xB9").html( dateTime.toLocaleDateString()); 
+                    $("#tbl01xC9").html(' ' + res[0] +' km');  
+                 } else {
+                   $("#tbl01xB9").html( '---'); 
+                   $("#tbl01xC9").html('---'); 
+                 }
+           }  
+        });   
+        entryNo++;
+
+       CarChain.getMilage($("#myAddress").val(),entryNo,(err, res) => {
+           if (res) {
+                 $("#tbl01xA10").html(' ' + 9);   
+                 var dateTime = new Date(res[1]*1000);                 
+                 if (res[1] !=0) {
+                    $("#tbl01xB10").html( dateTime.toLocaleDateString()); 
+                    $("#tbl01xC10").html(' ' + res[0] +' km');  
+                 } else {
+                   $("#tbl01xB10").html( '---'); 
+                   $("#tbl01xC10").html('---'); 
+                 }
+           }  
+        });   
+        entryNo++;
 
          
      });      
