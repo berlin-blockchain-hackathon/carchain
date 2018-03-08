@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Car Production</title>
+    <title>Car Registration</title>
 
     <link rel="stylesheet" type="text/css" href="main.css">
 
@@ -52,7 +52,7 @@
 <body>
     <div class="container">
 
-        <h1>Car Production</h1>
+        <h1>Car Registration</h1>
         <span id="firm_details"></span> 
         
         
@@ -67,7 +67,7 @@
               
         <span id="countIns"></span>
   
-        <h2>Produce single car</h2>
+        <h2>Register a  single car</h2>
  
 
         <img id="loader" src="https://loading.io/spinners/double-ring/lg.double-ring-spinner.gif">
@@ -143,6 +143,41 @@
     <td id="tbl01xC5"></td>
     <td id="tbl01xD5"></td>
     <td id="tbl01xE5"></td>  
+  </tr>
+ <tr>
+    <td id="tbl01xA6"></td>
+    <td id="tbl01xB6"></td>
+    <td id="tbl01xC6"></td>
+    <td id="tbl01xD6"></td>
+    <td id="tbl01xE6"></td>  
+  </tr>
+  <tr>
+    <td id="tbl01xA7"></td>
+    <td id="tbl01xB7"></td>
+    <td id="tbl01xC7"></td>
+    <td id="tbl01xD7"></td>
+    <td id="tbl01xE7"></td>  
+  </tr>
+  <tr>
+    <td id="tbl01xA8"></td>
+    <td id="tbl01xB8"></td>
+    <td id="tbl01xC8"></td>
+    <td id="tbl01xD8"></td>
+    <td id="tbl01xE8"></td>  
+  </tr>
+  <tr>
+    <td id="tbl01xA9"></td>
+    <td id="tbl01xB9"></td>
+    <td id="tbl01xC9"></td>
+    <td id="tbl01xD9"></td>
+    <td id="tbl01xE9"></td>  
+  </tr>
+  <tr>
+    <td id="tbl01xA10"></td>
+    <td id="tbl01xB10"></td>
+    <td id="tbl01xC10"></td>
+    <td id="tbl01xD10"></td>
+    <td id="tbl01xE10"></td>  
   </tr>
 
 
@@ -582,6 +617,11 @@
      var car03 = '0x4B20f638da74193c9B6c84E134d784C54a3aE5Be';
      var car04 = '0xC548EA01f579638FC872DA77ae61f97508EAecB2';
      var car05 = '0xd3E906CA20D9A8B0C21B9eA9651067c4D6F885ED';
+     var car06 = '0xafE53F8812258d478af118B7c6c7Ffc444Dc6db8';
+     var car07 = '0xb01fdB5eBBBF6B91cc2aD7662366Bbc6fC8Be9Ba';
+     var car08 = '0x36efd911C57A80528A47e111617540fa932641ee';
+     var car09 = '0x505B54a76C2C4c3F6E84e8430d208219B996CdF0';
+     var car10 = '0xbF587b829DF36719d9051b6fb98D985ac7462964';
    
      
          
@@ -666,10 +706,59 @@
            }  
         });   
 
-
+   CarChain.displayCar((car06),(err, res3) => {
+           if (res3) {
+                 $("#tbl01xA6").html( car06 );   
+                 $("#tbl01xB6").html( web3.toAscii(res3[0]) );   
+                 $("#tbl01xC6").html( web3.toAscii(res3[4]) );   
+                 $("#tbl01xD6").html( web3.toAscii(res3[5]) );   
+                 $("#tbl01xE6").html( web3.toAscii(res3[1]) );  
+                 
+           }  
+        });   
         
   
-     
+    CarChain.displayCar((car07),(err, res3) => {
+           if (res3) {
+                 $("#tbl01xA7").html( car07 );   
+                 $("#tbl01xB7").html( web3.toAscii(res3[0]) );   
+                 $("#tbl01xC7").html( web3.toAscii(res3[4]) );   
+                 $("#tbl01xD7").html( web3.toAscii(res3[5]) );   
+                 $("#tbl01xE7").html( web3.toAscii(res3[1]) );  
+                 
+           }  
+        });   
+   CarChain.displayCar((car08),(err, res3) => {
+           if (res3) {
+                 $("#tbl01xA8").html( car08 );   
+                 $("#tbl01xB8").html( web3.toAscii(res3[0]) );   
+                 $("#tbl01xC8").html( web3.toAscii(res3[4]) );   
+                 $("#tbl01xD8").html( web3.toAscii(res3[5]) );   
+                 $("#tbl01xE8").html( web3.toAscii(res3[1]) );  
+                 
+           }  
+        });   
+   CarChain.displayCar((car09),(err, res3) => {
+           if (res3) {
+                 $("#tbl01xA9").html( car09 );   
+                 $("#tbl01xB9").html( web3.toAscii(res3[0]) );   
+                 $("#tbl01xC9").html( web3.toAscii(res3[4]) );   
+                 $("#tbl01xD9").html( web3.toAscii(res3[5]) );   
+                 $("#tbl01xE9").html( web3.toAscii(res3[1]) );  
+                 
+           }  
+        });   
+   CarChain.displayCar((car10),(err, res3) => {
+           if (res3) {
+                 $("#tbl01xA10").html( car10 );   
+                 $("#tbl01xB10").html( web3.toAscii(res3[0]) );   
+                 $("#tbl01xC10").html( web3.toAscii(res3[4]) );   
+                 $("#tbl01xD10").html( web3.toAscii(res3[5]) );   
+                 $("#tbl01xE10").html( web3.toAscii(res3[1]) );  
+                 
+           }  
+        });   
+    
 
         
      

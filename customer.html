@@ -20,7 +20,7 @@
     .grid-container {
      display: grid;
        grid-template-columns: 100px 380px 270px;
-       grid-template-rows: 170px 20px 30px 40px 40px 20px 80px 175px 35px 30px 85px 430px;
+       grid-template-rows: 180px 20px 30px 40px 40px 20px 80px 175px 35px 30px 85px 430px;
        grid-gap: 2px;
      padding: 10px;
     }
@@ -34,7 +34,7 @@
     
     <style>
        table {
-        width:50%;
+        width:70%;
        }
        table, th, td {
            border: 1px solid black;
@@ -53,11 +53,41 @@
        table#t01 th {
        background-color: gray;
        color: white;
+       }   
+       
+       table#t02 tr:nth-child(even) {
+           background-color: #eee;
+       }
+       table#t02 tr:nth-child(odd) {
+           background-color:#fff;
        }
        table#t02 th {
        background-color: grey;
        color: white;
        }
+       
+       table#t03 tr:nth-child(even) {
+           background-color: #eee;
+       }
+       table#t03 tr:nth-child(odd) {
+           background-color:#fff;
+       }
+       table#t03 th {
+       background-color: grey;
+       color: white;
+       }
+       
+       table#t04 tr:nth-child(even) {
+           background-color: #eee;
+       }
+       table#t04 tr:nth-child(odd) {
+           background-color:#fff;
+       }
+       table#t04 th {
+       background-color: grey;
+       color: white;
+       }
+       
     </style>
     
     
@@ -71,9 +101,8 @@
 
     <div class="container">
 
-        <h1>Demo Car Blockchain Customer Portal</h1>
+       <h1>Demo Car Blockchain Customer Portal</h1>
 
-       <hr>
  
         <label for="myAddress" class="col-lg-2 control-label">Car Details by Blockchain Address</label>
         <input id="myAddress" type="text">
@@ -139,7 +168,7 @@
 
 
 </div>
-
+<hr>
 <h2>Speedometer</h2>
 <span id="carDetails2"></span>
  
@@ -204,8 +233,248 @@
     <td id="tbl01xC10"></td>
   </tr>
 
+</table>
 
 
+
+<br>
+<br>
+<hr>
+<h2>Exchanged Spare parts</h2>
+<span id="carDetails3"></span>
+ 
+<table id="t02">
+  <tr>
+    <th>Insterted</th>
+    <th>Part</th>
+    <th>Serial </th> 
+    <th>by</th> 
+  </tr>
+  <tr>
+    <td id="tbl02xA0"></td>
+    <td id="tbl02xB0"></td>
+    <td id="tbl02xC0"></td>
+    <td id="tbl02xD0"></td>
+  </tr>
+ <tr>
+    <td id="tbl02xA1"></td>
+    <td id="tbl02xB1"></td>
+    <td id="tbl02xC1"></td>
+    <td id="tbl02xD1"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl02xA2"></td>
+    <td id="tbl02xB2"></td>
+    <td id="tbl02xC2"></td>
+    <td id="tbl02xD2"></td>
+  </tr>
+  <tr>
+    <td id="tbl02xA3"></td>
+    <td id="tbl02xB3"></td>
+    <td id="tbl02xC3"></td>
+    <td id="tbl02xD3"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl02xA4"></td>
+    <td id="tbl02xB4"></td>
+    <td id="tbl02xC4"></td>
+    <td id="tbl02xD4"></td>
+   </tr>
+  <tr>
+    <td id="tbl02xA5"></td>
+    <td id="tbl02xB5"></td>
+    <td id="tbl02xC5"></td>
+    <td id="tbl02xD5"></td>
+  </tr>
+  <tr>
+    <td id="tbl02xA6"></td>
+    <td id="tbl02xB6"></td>
+    <td id="tbl02xC6"></td>
+    <td id="tbl02xD6"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl02xA7"></td>
+    <td id="tbl02xB7"></td>
+    <td id="tbl02xC7"></td>
+    <td id="tbl02xD7"></td>
+  </tr>
+  <tr>
+    <td id="tbl02xA8"></td>
+    <td id="tbl02xB8"></td>
+    <td id="tbl02xC8"></td>
+    <td id="tbl02xD8"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl02xA9"></td>
+    <td id="tbl02xB9"></td>
+    <td id="tbl02xC9"></td>
+    <td id="tbl02xD9"></td>
+   </tr>
+ 
+</table>
+
+<br>
+<br>
+<hr>
+<h2>Inspections and Repairs</h2>
+<span id="carDetails4"></span>
+ 
+<table id="t03">
+  <tr>
+    <th>Date</th>
+    <th>Reason</th>
+    <th>Details </th> 
+    <th>done by</th> 
+  </tr>
+  <tr>
+    <td id="tbl03xA0"></td>
+    <td id="tbl03xB0"></td>
+    <td id="tbl03xC0"></td>
+    <td id="tbl03xD0"></td>
+  </tr>
+ <tr>
+    <td id="tbl03xA1"></td>
+    <td id="tbl03xB1"></td>
+    <td id="tbl03xC1"></td>
+    <td id="tbl03xD1"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl03xA2"></td>
+    <td id="tbl03xB2"></td>
+    <td id="tbl03xC2"></td>
+    <td id="tbl03xD2"></td>
+  </tr>
+  <tr>
+    <td id="tbl03xA3"></td>
+    <td id="tbl03xB3"></td>
+    <td id="tbl03xC3"></td>
+    <td id="tbl03xD3"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl03xA4"></td>
+    <td id="tbl03xB4"></td>
+    <td id="tbl03xC4"></td>
+    <td id="tbl03xD4"></td>
+   </tr>
+  <tr>
+    <td id="tbl03xA5"></td>
+    <td id="tbl03xB5"></td>
+    <td id="tbl03xC5"></td>
+    <td id="tbl03xD5"></td>
+  </tr>
+  <tr>
+    <td id="tbl03xA6"></td>
+    <td id="tbl03xB6"></td>
+    <td id="tbl03xC6"></td>
+    <td id="tbl03xD6"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl03xA7"></td>
+    <td id="tbl03xB7"></td>
+    <td id="tbl03xC7"></td>
+    <td id="tbl03xD7"></td>
+  </tr>
+  <tr>
+    <td id="tbl03xA8"></td>
+    <td id="tbl03xB8"></td>
+    <td id="tbl03xC8"></td>
+    <td id="tbl03xD8"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl03xA9"></td>
+    <td id="tbl03xB9"></td>
+    <td id="tbl03xC9"></td>
+    <td id="tbl03xD9"></td>
+   </tr>
+ 
+</table>
+
+<br>
+<br>
+<hr>
+<h2>Financial transactions of car</h2>
+<span id="carDetails5"></span>
+ 
+<table id="t04">
+  <tr>
+    <th>Date</th>
+    <th>Reason</th>
+    <th>Details </th> 
+    <th>done by</th> 
+  </tr>
+  <tr>
+    <td id="tbl04xA0"></td>
+    <td id="tbl04xB0"></td>
+    <td id="tbl04xC0"></td>
+    <td id="tbl04xD0"></td>
+  </tr>
+ <tr>
+    <td id="tbl04xA1"></td>
+    <td id="tbl04xB1"></td>
+    <td id="tbl04xC1"></td>
+    <td id="tbl04xD1"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl04xA2"></td>
+    <td id="tbl04xB2"></td>
+    <td id="tbl04xC2"></td>
+    <td id="tbl04xD2"></td>
+  </tr>
+  <tr>
+    <td id="tbl04xA3"></td>
+    <td id="tbl04xB3"></td>
+    <td id="tbl04xC3"></td>
+    <td id="tbl04xD3"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl04xA4"></td>
+    <td id="tbl04xB4"></td>
+    <td id="tbl04xC4"></td>
+    <td id="tbl04xD4"></td>
+   </tr>
+  <tr>
+    <td id="tbl04xA5"></td>
+    <td id="tbl04xB5"></td>
+    <td id="tbl04xC5"></td>
+    <td id="tbl04xD5"></td>
+  </tr>
+  <tr>
+    <td id="tbl04xA6"></td>
+    <td id="tbl04xB6"></td>
+    <td id="tbl04xC6"></td>
+    <td id="tbl04xD6"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl04xA7"></td>
+    <td id="tbl04xB7"></td>
+    <td id="tbl04xC7"></td>
+    <td id="tbl04xD7"></td>
+  </tr>
+  <tr>
+    <td id="tbl04xA8"></td>
+    <td id="tbl04xB8"></td>
+    <td id="tbl04xC8"></td>
+    <td id="tbl04xD8"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl04xA9"></td>
+    <td id="tbl04xB9"></td>
+    <td id="tbl04xC9"></td>
+    <td id="tbl04xD9"></td>
+   </tr>
+ 
 </table>
 
 
@@ -674,8 +943,7 @@
            }  
         }); 		   
 
- 
-        
+
         
         entryNo=0;
    
@@ -837,7 +1105,287 @@
         entryNo++;
 
          
+    //end of milage table//////////////////////////////////////
+    
+    //Spare part table/////////////////////////////////////////
+        
+    CarChain.displayCar($("#myAddress").val(),(err, res4) => {
+           if (res4) {
+                $("#carDetails3").html( 
+     					   'your car '+   web3.toAscii(res4[4]) +' serial number '+  web3.toAscii(res4[5]) + ' has registered the following spare parts: <br><br>' 
+                 ); 
+           }  
+        }); 		   
+
+ 
+        
+        
+        entryNo=0;
+   
+        CarChain.getPart($("#myAddress").val(),entryNo,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[2]*1000);                 
+                 if (res[2] !=0) {
+                    $("#tbl02xA0").html( dateTime.toLocaleDateString()); 
+                    $("#tbl02xB0").html(' ' + web3.toAscii(res[1]) );  
+                    $("#tbl02xC0").html(' ' + web3.toAscii(res[0]) );  
+                    $("#tbl02xD0").html(' ' + web3.toAscii(res[3]) );  
+                   } else {
+                   $("#tbl02xA0").html('---'); 
+                   $("#tbl02xB0").html('---'); 
+                   $("#tbl02xC0").html('---'); 
+                   $("#tbl02xD0").html('---'); 
+                 }
+          }  
+        });   
+        entryNo++;
+
+        CarChain.getPart($("#myAddress").val(),entryNo,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[2]*1000);                 
+                 if (res[2] !=0) {
+                    $("#tbl02xA1").html( dateTime.toLocaleDateString()); 
+                    $("#tbl02xB1").html(' ' + web3.toAscii(res[1]) );  
+                    $("#tbl02xC1").html(' ' + web3.toAscii(res[0]) );  
+                    $("#tbl02xD1").html(' ' + web3.toAscii(res[3]) );  
+                   } else {
+                    $("#tbl02xA1").html('---'); 
+                    $("#tbl02xB1").html('---'); 
+                    $("#tbl02xC1").html('---'); 
+                    $("#tbl02xD1").html('---'); 
+                 }
+          }  
+        });   
+        entryNo++;
+
+        CarChain.getPart($("#myAddress").val(),entryNo,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[2]*1000);                 
+                 if (res[2] !=0) {
+                    $("#tbl02xA2").html( dateTime.toLocaleDateString()); 
+                    $("#tbl02xB2").html(' ' + web3.toAscii(res[1]) );  
+                    $("#tbl02xC2").html(' ' + web3.toAscii(res[0]) );  
+                    $("#tbl02xD2").html(' ' + web3.toAscii(res[3]) );  
+                   } else {
+                    $("#tbl02xA2").html('---'); 
+                    $("#tbl02xB2").html('---'); 
+                    $("#tbl02xC2").html('---'); 
+                    $("#tbl02xD2").html('---'); 
+                 }
+          }  
+        });   
+        entryNo++;
+
+        CarChain.getPart($("#myAddress").val(),entryNo,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[2]*1000);                 
+                 if (res[2] !=0) {
+                    $("#tbl02xA3").html( dateTime.toLocaleDateString()); 
+                    $("#tbl02xB3").html(' ' + web3.toAscii(res[1]) );  
+                    $("#tbl02xC3").html(' ' + web3.toAscii(res[0]) );  
+                    $("#tbl02xD3").html(' ' + web3.toAscii(res[3]) );  
+                   } else {
+                    $("#tbl02xA3").html('---'); 
+                    $("#tbl02xB3").html('---'); 
+                    $("#tbl02xC3").html('---'); 
+                    $("#tbl02xD3").html('---'); 
+                   }
+          }  
+        });   
+        entryNo++;
+
+        CarChain.getPart($("#myAddress").val(),entryNo,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[2]*1000);                 
+                 if (res[2] !=0) {
+                    $("#tbl02xA4").html( dateTime.toLocaleDateString()); 
+                    $("#tbl02xB4").html(' ' + web3.toAscii(res[1]) );  
+                    $("#tbl02xC4").html(' ' + web3.toAscii(res[0]) );  
+                    $("#tbl02xD4").html(' ' + web3.toAscii(res[3]) );  
+                   } else {
+                    $("#tbl02xA4").html('---'); 
+                    $("#tbl02xB4").html('---'); 
+                    $("#tbl02xC4").html('---'); 
+                    $("#tbl02xD4").html('---'); 
+                   }
+          }  
+        });   
+        entryNo++;
+
+
+        CarChain.getPart($("#myAddress").val(),entryNo,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[2]*1000);                 
+                 if (res[2] !=0) {
+                    $("#tbl02xA5").html( dateTime.toLocaleDateString()); 
+                    $("#tbl02xB5").html(' ' + web3.toAscii(res[1]) );  
+                    $("#tbl02xC5").html(' ' + web3.toAscii(res[0]) );  
+                    $("#tbl02xD5").html(' ' + web3.toAscii(res[3]) );  
+                   } else {
+                    $("#tbl02xA5").html('---'); 
+                    $("#tbl02xB5").html('---'); 
+                    $("#tbl02xC5").html('---'); 
+                    $("#tbl02xD5").html('---'); 
+                   }
+          }  
+        });   
+        entryNo++;
+
+        CarChain.getPart($("#myAddress").val(),entryNo,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[2]*1000);                 
+                 if (res[2] !=0) {
+                    $("#tbl02xA6").html( dateTime.toLocaleDateString()); 
+                    $("#tbl02xB6").html(' ' + web3.toAscii(res[1]) );  
+                    $("#tbl02xC6").html(' ' + web3.toAscii(res[0]) );  
+                    $("#tbl02xD6").html(' ' + web3.toAscii(res[3]) );  
+                   } else {
+                    $("#tbl02xA6").html('---'); 
+                    $("#tbl02xB6").html('---'); 
+                    $("#tbl02xC6").html('---'); 
+                    $("#tbl02xD6").html('---'); 
+                   }
+          }  
+        });   
+        entryNo++;
+
+        CarChain.getPart($("#myAddress").val(),entryNo,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[2]*1000);                 
+                 if (res[2] !=0) {
+                    $("#tbl02xA7").html( dateTime.toLocaleDateString()); 
+                    $("#tbl02xB7").html(' ' + web3.toAscii(res[1]) );  
+                    $("#tbl02xC7").html(' ' + web3.toAscii(res[0]) );  
+                    $("#tbl02xD7").html(' ' + web3.toAscii(res[3]) );  
+                   } else {
+                    $("#tbl02xA7").html('---'); 
+                    $("#tbl02xB7").html('---'); 
+                    $("#tbl02xC7").html('---'); 
+                    $("#tbl02xD7").html('---'); 
+                   }
+          }  
+        });   
+        entryNo++;
+
+        CarChain.getPart($("#myAddress").val(),entryNo,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[2]*1000);                 
+                 if (res[2] !=0) {
+                    $("#tbl02xA8").html( dateTime.toLocaleDateString()); 
+                    $("#tbl02xB8").html(' ' + web3.toAscii(res[1]) );  
+                    $("#tbl02xC8").html(' ' + web3.toAscii(res[0]) );  
+                    $("#tbl02xD8").html(' ' + web3.toAscii(res[3]) );  
+                   } else {
+                    $("#tbl02xA8").html('---'); 
+                    $("#tbl02xB8").html('---'); 
+                    $("#tbl02xC8").html('---'); 
+                    $("#tbl02xD8").html('---'); 
+                   }
+          }  
+        });   
+        entryNo++;
+
+        CarChain.getPart($("#myAddress").val(),entryNo,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[2]*1000);                 
+                 if (res[2] !=0) {
+                    $("#tbl02xA9").html( dateTime.toLocaleDateString()); 
+                    $("#tbl02xB9").html(' ' + web3.toAscii(res[1]) );  
+                    $("#tbl02xC9").html(' ' + web3.toAscii(res[0]) );  
+                    $("#tbl02xD9").html(' ' + web3.toAscii(res[3]) );  
+                   } else {
+                    $("#tbl02xA9").html('---'); 
+                    $("#tbl02xB9").html('---'); 
+                    $("#tbl02xC9").html('---'); 
+                    $("#tbl02xD9").html('---'); 
+                   }
+          }  
+        });   
+        entryNo++;
+
+         // End of parts table /////////////////////////////////////////////////// 
+         
+         
+         
+         
+        //Inspection  table/////////////////////////////////////////
+        
+        CarChain.displayCar($("#myAddress").val(),(err, res5) => {
+           if (res5) {
+                $("#carDetails4").html( 
+     					   'your car '+   web3.toAscii(res5[4]) +' serial number '+  web3.toAscii(res5[5]) + ' has documented the following inspections: <br><br>' 
+                 ); 
+                $("#tbl03xD0").html(' ' + web3.toAscii(res5[0]) );
+           }  
+        }); 		   
+
+ 
+        
+        
+        entryNo=0;
+   
+        CarChain.getMilage($("#myAddress").val(),entryNo,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[1]*1000);                 
+                 if (res[1] !=0) {
+                    $("#tbl03xA0").html( dateTime.toLocaleDateString()); 
+                    $("#tbl03xB0").html('Factory Release  ');  
+                    $("#tbl03xC0").html('passed' );  
+                    
+                   } else {
+                    $("#tbl03xA0").html('---'); 
+                    $("#tbl03xB0").html('---'); 
+                    $("#tbl03xC0").html('---'); 
+                    $("#tbl03xD0").html('---'); 
+                 }
+          }  
+        });   
+        entryNo++;
+
+       // End of inspections table /////////////////////////////////////////////////// 
+ 
+ 
+       //Financial transaction  table/////////////////////////////////////////
+        
+        CarChain.displayCar($("#myAddress").val(),(err, res5) => {
+           if (res5) {
+            
+                $("#carDetails5").html( 
+     					   'your car '+   web3.toAscii(res5[4]) +' serial number '+  web3.toAscii(res5[5]) 
+     					   + ' has the following finance tranactions <br>'+ 
+     					   'Car Account:'  +   $("#myAddress").val() +  '<br><br>'
+                 ); 
+                 
+           }  
+        }); 		   
+
+        
+        
+        entryNo=0;
+   
+        CarChain.getMilage($("#myAddress").val(),entryNo,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[1]*1000);                 
+                 if (res[1] !=0) {
+                    $("#tbl03xA0").html( dateTime.toLocaleDateString()); 
+                    $("#tbl03xB0").html('Factory Release  ');  
+                    $("#tbl03xC0").html('passed' );  
+                    
+                   } else {
+                    $("#tbl03xA0").html('---'); 
+                    $("#tbl03xB0").html('---'); 
+                    $("#tbl03xC0").html('---'); 
+                    $("#tbl03xD0").html('---'); 
+                 }
+          }  
+        });   
+        entryNo++;
+
+       // End of financial transaction table /////////////////////////////////////////////////// 
+ 
+         
      });      
+     // End of Button3.click  ///////////////////////////////////////////////////
     
     </script>
     
