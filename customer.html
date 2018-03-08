@@ -110,6 +110,8 @@
              
         
         <span id="carDetails"></span>
+       <span id="carDetails0"></span>
+
     </div>
 
 <div class="grid-container">
@@ -402,7 +404,10 @@
 <hr>
 <h2>Financial transactions of car</h2>
 <span id="carDetails5"></span>
- 
+<span id="carDetails6"></span>
+<span id="carDetails7"></span>
+
+  
 <table id="t04">
   <tr>
     <th>Date</th>
@@ -902,8 +907,10 @@
      
      var entryNo=0;
      
+
+       
+     //Licence Document/////////////////////////////////////////
         
-         
             
        
      $("#button3").click(function() {       
@@ -931,7 +938,9 @@
   
            }  
         }); 
-        
+    
+     //End Licence Document/////////////////////////////////////////
+     
         
     //Milage table/////////////////////////////////////////
         
@@ -1352,14 +1361,23 @@
             
                 $("#carDetails5").html( 
      					   'your car '+   web3.toAscii(res5[4]) +' serial number '+  web3.toAscii(res5[5]) 
-     					   + ' has the following finance tranactions <br>'+ 
-     					   'Car Account:'  +   $("#myAddress").val() +  '<br><br>'
+     					   + ' has the following finance tranactions <br><br>'+ 
+     					   'Car Account:  '  +   $("#myAddress").val() +  '<br>'
                  ); 
                  
            }  
         }); 		   
 
-        
+        web3.eth.getBalance($("#myAddress").val(), function(error, result){
+            if(!error){
+               console.log(JSON.stringify(result))   ;
+               $("#carDetails6").html('Car Balance:  '  +  result/1000000000 +' nanoEther' + '<br><br>'); 
+               $("#carDetails7").html('History Link:  https://rinkeby.etherscan.io/address/' +  $("#myAddress").val() + '<br><br>');                    
+            }
+                
+            else
+               console.error(error);
+     });
         
         entryNo=0;
    
