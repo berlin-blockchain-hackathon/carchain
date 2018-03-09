@@ -65,8 +65,7 @@
   </tr>
  </table>
               
-        <span id="countIns"></span>
-  
+   
          <h2>Sell single car</h2>
  
 
@@ -79,21 +78,18 @@
         <input id="toAdr" type="text">
 
         <button id="button1">Sell Car</button>
-
+ 
+        <button id="button2">Delivery note</button>
         <hr>
-
+        <span id="seller"></span>
+        <span id="buyer"></span>
+        <span id="carDetails"></span>
+        <span id="footer"></span>
+        <hr>
         <h2>Car Details by Blockchain Address</h2>
  
         <img id="qr" src='https://chart.googleapis.com/chart?cht=qr&chl=0x7a701451dC7aE33c23a5349B378c6950a8044f0E&chs=180x180&choe=UTF-8&chld=L|2' alt='qr code'>
               
-        <div>
-          <span id="carDetails"></span>
-          <span id="carDetails1"></span>
-          <span id="carDetails2"></span>
-          <span id="carDetails3"></span>
-          <span id="carDetails4"></span>
-          <span id="carDetails5"></span>
-			</div>
  
 
 <table id="t01">
@@ -139,6 +135,41 @@
     <td id="tbl01xC5"></td>
     <td id="tbl01xD5"></td>
     <td id="tbl01xE5"></td>  
+  </tr>
+ <tr>
+    <td id="tbl01xA6"></td>
+    <td id="tbl01xB6"></td>
+    <td id="tbl01xC6"></td>
+    <td id="tbl01xD6"></td>
+    <td id="tbl01xE6"></td>  
+  </tr>
+  <tr>
+    <td id="tbl01xA7"></td>
+    <td id="tbl01xB7"></td>
+    <td id="tbl01xC7"></td>
+    <td id="tbl01xD7"></td>
+    <td id="tbl01xE7"></td>  
+  </tr>
+  <tr>
+    <td id="tbl01xA8"></td>
+    <td id="tbl01xB8"></td>
+    <td id="tbl01xC8"></td>
+    <td id="tbl01xD8"></td>
+    <td id="tbl01xE8"></td>  
+  </tr>
+  <tr>
+    <td id="tbl01xA9"></td>
+    <td id="tbl01xB9"></td>
+    <td id="tbl01xC9"></td>
+    <td id="tbl01xD9"></td>
+    <td id="tbl01xE9"></td>  
+  </tr>
+  <tr>
+    <td id="tbl01xA10"></td>
+    <td id="tbl01xB10"></td>
+    <td id="tbl01xC10"></td>
+    <td id="tbl01xD10"></td>
+    <td id="tbl01xE10"></td>  
   </tr>
 
 
@@ -579,8 +610,19 @@
      var car03 = '0x4B20f638da74193c9B6c84E134d784C54a3aE5Be';
      var car04 = '0xC548EA01f579638FC872DA77ae61f97508EAecB2';
      var car05 = '0xd3E906CA20D9A8B0C21B9eA9651067c4D6F885ED';
+     var car06 = '0xafE53F8812258d478af118B7c6c7Ffc444Dc6db8';
+     var car07 = '0xb01fdB5eBBBF6B91cc2aD7662366Bbc6fC8Be9Ba';
+     var car08 = '0x36efd911C57A80528A47e111617540fa932641ee';
+     var car09 = '0x505B54a76C2C4c3F6E84e8430d208219B996CdF0';
+     var car10 = '0xbF587b829DF36719d9051b6fb98D985ac7462964';
    
-     var firm03 = '0xe9999aC41a770FF011F23a91998B61B965b18B6D';
+     
+         
+    var firm01 = '0x46aed27379c94784160b56b89ee1564de0cf11db'; //Volkswagen
+      
+
+   
+     var firm03 = '0xe9999aC41a770FF011F23a91998B61B965b18B6D'; //cardealer1 
 
      $("#qr").hide(); 
   
@@ -597,7 +639,7 @@
 
  
  
-    CarChain.displayCar((car01),(err, res3) => {
+   CarChain.displayCar((car01),(err, res3) => {
            if (res3) {
                  $("#tbl01xA1").html( car01 );   
                  $("#tbl01xB1").html( web3.toAscii(res3[0]) );   
@@ -641,24 +683,134 @@
            if (res3) {
                  $("#tbl01xA5").html( car05 );   
                  $("#tbl01xB5").html( web3.toAscii(res3[0]) );   
-                 $("#tbl01xC5").html( web3.toAscii(res3[2]) );   
-                 $("#tbl01xD5").html( web3.toAscii(res3[3]) );   
-                 $("#tbl01xE5").html( web3.toAscii(res3[1]) );                    
+                 $("#tbl01xC5").html( web3.toAscii(res3[4]) );   
+                 $("#tbl01xD5").html( web3.toAscii(res3[5]) );   
+                 $("#tbl01xE5").html( web3.toAscii(res3[1]) );  
+                 
            }  
         });   
 
-
+   CarChain.displayCar((car06),(err, res3) => {
+           if (res3) {
+                 $("#tbl01xA6").html( car06 );   
+                 $("#tbl01xB6").html( web3.toAscii(res3[0]) );   
+                 $("#tbl01xC6").html( web3.toAscii(res3[4]) );   
+                 $("#tbl01xD6").html( web3.toAscii(res3[5]) );   
+                 $("#tbl01xE6").html( web3.toAscii(res3[1]) );  
+                 
+           }  
+        });   
         
+  
+    CarChain.displayCar((car07),(err, res3) => {
+           if (res3) {
+                 $("#tbl01xA7").html( car07 );   
+                 $("#tbl01xB7").html( web3.toAscii(res3[0]) );   
+                 $("#tbl01xC7").html( web3.toAscii(res3[4]) );   
+                 $("#tbl01xD7").html( web3.toAscii(res3[5]) );   
+                 $("#tbl01xE7").html( web3.toAscii(res3[1]) );  
+                 
+           }  
+        });   
+   CarChain.displayCar((car08),(err, res3) => {
+           if (res3) {
+                 $("#tbl01xA8").html( car08 );   
+                 $("#tbl01xB8").html( web3.toAscii(res3[0]) );   
+                 $("#tbl01xC8").html( web3.toAscii(res3[4]) );   
+                 $("#tbl01xD8").html( web3.toAscii(res3[5]) );   
+                 $("#tbl01xE8").html( web3.toAscii(res3[1]) );  
+                 
+           }  
+        });   
+   CarChain.displayCar((car09),(err, res3) => {
+           if (res3) {
+                 $("#tbl01xA9").html( car09 );   
+                 $("#tbl01xB9").html( web3.toAscii(res3[0]) );   
+                 $("#tbl01xC9").html( web3.toAscii(res3[4]) );   
+                 $("#tbl01xD9").html( web3.toAscii(res3[5]) );   
+                 $("#tbl01xE9").html( web3.toAscii(res3[1]) );  
+                 
+           }  
+        });   
+   CarChain.displayCar((car10),(err, res3) => {
+           if (res3) {
+                 $("#tbl01xA10").html( car10 );   
+                 $("#tbl01xB10").html( web3.toAscii(res3[0]) );   
+                 $("#tbl01xC10").html( web3.toAscii(res3[4]) );   
+                 $("#tbl01xD10").html( web3.toAscii(res3[5]) );   
+                 $("#tbl01xE10").html( web3.toAscii(res3[1]) );  
+                 
+           }  
+        });   
+    
+
+// sell car
      $("#button1").click(
     	function() {
-    		
-    		CarChain.sellCar($("#carAdr").val(), $("#toAdr").val(), (err, res) => {
+       		CarChain.sellCar($("#carAdr").val(), $("#toAdr").val(), (err, res) => {
 			$("#loader").show();        	
         		if (err) 
             	$("#loader").hide();
       	});
     });
   
+// display delivery note
+     $("#button2").click(
+    	function() {
+      CarChain.displayFirm((firm01),(err, res) => {
+           if (res) {
+                  $("#seller").html( 
+                     web3.toAscii(res[0]) + ' AG <br>' +
+                     web3.toAscii(res[1]) + ' <br>' +
+                     web3.toAscii(res[2]) + ' <br>' +
+                      '<br><br><br>'
+                     );   
+                    
+           }  
+        });   
+
+      CarChain.displayCar($("#carAdr").val(),(err, res) => {
+           if (res) {
+                $("#buyer").html( 
+                     web3.toAscii(res[1]) + ' <br>' +
+                     web3.toAscii(res[2]) + ' <br>' +
+                     web3.toAscii(res[3]) + ' <br>' +
+                      '<br><br><br>'                  ); 
+                }   
+             
+       }); 	  
+
+
+       CarChain.displayCar($("#carAdr").val(),(err, res) => {
+           if (res) {
+                $("#carDetails").html( 
+     					   '<b>Delivery Note </b> <br><br>' +
+     					   '<table> '+
+     					   '<tr><td> Postion </td> <td>Number </td> <td>Type</td>                     <td>Serial</td>             <td>Account</td>  </tr> '+
+     					   '<tr><td> 01      </td> <td>1 piece</td> <td>'+ web3.toAscii(res[4])+'</td> <td>'+web3.toAscii(res[5])+'</td> <td>'+$("#carAdr").val() +'</td> </tr>'+
+    					   '</table> <br><br>' 
+                  ); 
+                }   
+             
+       }); 	
+
+
+     CarChain.displayFirm((firm01),(err, res) => {
+           if (res) {
+                  $("#footer").html( 
+                     '<hr>' +                     
+                     web3.toAscii(res[0]) + ' AG, ' +
+                     web3.toAscii(res[1]) + ', ' +
+                     web3.toAscii(res[2]) + ', ' +
+                     'Bank account: '+ firm01 +
+                      '<hr><br><br><br>'
+                     );   
+                    
+           }  
+        });   
+     });//end button click
+
+
     
     
     </script>

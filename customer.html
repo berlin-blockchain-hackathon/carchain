@@ -328,7 +328,7 @@
 <table id="t03">
   <tr>
     <th>Date</th>
-    <th>Reason</th>
+    <th>Amount</th>
     <th>Details </th> 
     <th>done by</th> 
   </tr>
@@ -914,20 +914,20 @@
             
        
      $("#button3").click(function() {       
-        CarChain.displayCar($("#myAddress").val(),(err, res3) => {
-           if (res3) {
+        CarChain.displayCar($("#myAddress").val(),(err, res) => {
+           if (res) {
                 $("#carDetails").html( 
      
                   );
                 
 				  	document.getElementById("car_addr").innerHTML =      $("#myAddress").val();
-				  	document.getElementById("car_maker").innerHTML =     web3.toAscii(res3[0]);
-				 	document.getElementById("car_type").innerHTML =      web3.toAscii(res3[4]);
-				 	document.getElementById("car_serial").innerHTML =    web3.toAscii(res3[5]);
-				 	document.getElementById("owners_name").innerHTML =   web3.toAscii(res3[1]);
-			   	document.getElementById("owners_city").innerHTML =   web3.toAscii(res3[2]); 
-               document.getElementById("owners_street").innerHTML = web3.toAscii(res3[3]); 
-               document.getElementById("maker_remark").innerHTML =  web3.toAscii(res3[0]) + ' AG Germany'; 
+				  	document.getElementById("car_maker").innerHTML =     web3.toAscii(res[0]);
+				 	document.getElementById("car_type").innerHTML =      web3.toAscii(res[4]);
+				 	document.getElementById("car_serial").innerHTML =    web3.toAscii(res[5]);
+				 	document.getElementById("owners_name").innerHTML =   web3.toAscii(res[1]);
+			   	document.getElementById("owners_city").innerHTML =   web3.toAscii(res[2]); 
+               document.getElementById("owners_street").innerHTML = web3.toAscii(res[3]); 
+               document.getElementById("maker_remark").innerHTML =  web3.toAscii(res[0]) + ' AG Germany'; 
                
                document.getElementById("number_plate").innerHTML =    'not yet assigned';
 
@@ -944,10 +944,10 @@
         
     //Milage table/////////////////////////////////////////
         
-        CarChain.displayCar($("#myAddress").val(),(err, res3) => {
-           if (res3) {
+        CarChain.displayCar($("#myAddress").val(),(err, res) => {
+           if (res) {
                 $("#carDetails2").html( 
-     					   'your car '+   web3.toAscii(res3[4]) +' serial number '+  web3.toAscii(res3[5]) + ' has registered the following milage entries: <br><br>' 
+     					   'your car '+   web3.toAscii(res[4]) +' serial number '+  web3.toAscii(res[5]) + ' has registered the following milage entries: <br><br>' 
                  ); 
            }  
         }); 		   
@@ -1118,10 +1118,10 @@
     
     //Spare part table/////////////////////////////////////////
         
-    CarChain.displayCar($("#myAddress").val(),(err, res4) => {
-           if (res4) {
+    CarChain.displayCar($("#myAddress").val(),(err, res) => {
+           if (res) {
                 $("#carDetails3").html( 
-     					   'your car '+   web3.toAscii(res4[4]) +' serial number '+  web3.toAscii(res4[5]) + ' has registered the following spare parts: <br><br>' 
+     					   'your car '+   web3.toAscii(res[4]) +' serial number '+  web3.toAscii(res[5]) + ' has registered the following spare parts: <br><br>' 
                  ); 
            }  
         }); 		   
@@ -1319,12 +1319,12 @@
          
         //Inspection  table/////////////////////////////////////////
         
-        CarChain.displayCar($("#myAddress").val(),(err, res5) => {
-           if (res5) {
+        CarChain.displayCar($("#myAddress").val(),(err, res) => {
+           if (res) {
                 $("#carDetails4").html( 
-     					   'your car '+   web3.toAscii(res5[4]) +' serial number '+  web3.toAscii(res5[5]) + ' has documented the following inspections: <br><br>' 
+     					   'your car '+   web3.toAscii(res[4]) +' serial number '+  web3.toAscii(res[5]) + ' has documented the following inspections: <br><br>' 
                  ); 
-                $("#tbl03xD0").html(' ' + web3.toAscii(res5[0]) );
+                $("#tbl03xD0").html(' ' + web3.toAscii(res[0]) );
            }  
         }); 		   
 
@@ -1356,11 +1356,11 @@
  
        //Financial transaction  table/////////////////////////////////////////
         
-        CarChain.displayCar($("#myAddress").val(),(err, res5) => {
-           if (res5) {
+        CarChain.displayCar($("#myAddress").val(),(err, res) => {
+           if (res) {
             
                 $("#carDetails5").html( 
-     					   'your car '+   web3.toAscii(res5[4]) +' serial number '+  web3.toAscii(res5[5]) 
+     					   'your car '+   web3.toAscii(res[4]) +' serial number '+  web3.toAscii(res[5]) 
      					   + ' has the following finance tranactions <br><br>'+ 
      					   'Car Account:  '  +   $("#myAddress").val() +  '<br>'
                  ); 
@@ -1371,13 +1371,13 @@
         web3.eth.getBalance($("#myAddress").val(), function(error, result){
             if(!error){
                console.log(JSON.stringify(result))   ;
-               $("#carDetails6").html('Car Balance:  '  +  result/1000000000 +' nanoEther' + '<br><br>'); 
+               $("#carDetails6").html('Car Balance:  '  +  result/1000000000/1000000 +' milliEther' + '<br><br>'); 
                $("#carDetails7").html('History Link:  https://rinkeby.etherscan.io/address/' +  $("#myAddress").val() + '<br><br>');                    
             }
                 
             else
                console.error(error);
-     });
+        });
         
         entryNo=0;
    
@@ -1385,19 +1385,28 @@
            if (res) {
                  var dateTime = new Date(res[1]*1000);                 
                  if (res[1] !=0) {
-                    $("#tbl03xA0").html( dateTime.toLocaleDateString()); 
-                    $("#tbl03xB0").html('Factory Release  ');  
-                    $("#tbl03xC0").html('passed' );  
+                    $("#tbl04xA0").html( dateTime.toLocaleDateString()); 
+                    $("#tbl04xB0").html('0.00 mEther ');  
+                    $("#tbl04xC0").html('initial car acccount creation ');  
+                  //  $("#tbl04xD0").html( $("#myAddress").val());  
                     
                    } else {
-                    $("#tbl03xA0").html('---'); 
-                    $("#tbl03xB0").html('---'); 
-                    $("#tbl03xC0").html('---'); 
-                    $("#tbl03xD0").html('---'); 
+                    $("#tbl04xA0").html('---'); 
+                    $("#tbl04xB0").html('---'); 
+                    $("#tbl04xC0").html('---'); 
+                    $("#tbl04xD0").html('---'); 
                  }
           }  
         });   
+         
+         CarChain.displayCar($("#myAddress").val(),(err, res) => {
+           if (res) {
+                $("#tbl04xD0").html( web3.toAscii(res[0] ));
+           }  
+        }); 		
+   
         entryNo++;
+  
 
        // End of financial transaction table /////////////////////////////////////////////////// 
  

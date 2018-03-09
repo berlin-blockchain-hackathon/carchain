@@ -90,15 +90,6 @@
  
         <img id="qr" src='https://chart.googleapis.com/chart?cht=qr&chl=0x7a701451dC7aE33c23a5349B378c6950a8044f0E&chs=180x180&choe=UTF-8&chld=L|2' alt='qr code'>
               
-        <div>
-          <span id="carDetails"></span>
-          <span id="carDetails1"></span>
-          <span id="carDetails2"></span>
-          <span id="carDetails3"></span>
-          <span id="carDetails4"></span>
-          <span id="carDetails5"></span>
-			</div>
- 
 
 <table id="t01">
   <tr>
@@ -633,8 +624,8 @@
   
     
     
-    CarChain.getFirmAdr((0),(err, res3) => {
-           if (res3) {
+    CarChain.getFirmAdr((0),(err, res) => {
+           if (res) {
                myAcc= web3.eth.defaultAccount;
                $("#tbl02xA1").html(myAcc);
                  
@@ -643,118 +634,118 @@
         
         
     
-    CarChain.displayFirm((firm01),(err, res3) => {
-           if (res3) {
+    CarChain.displayFirm((firm01),(err, res) => {
+           if (res) {
                   //$("#tbl02xA1").html( firm01 );   
-                  $("#tbl02xB1").html( web3.toAscii(res3[0]) );   
-                  $("#tbl02xC1").html( web3.toAscii(res3[1]) );   
-                  $("#tbl02xD1").html( web3.toAscii(res3[2]) );   
+                  $("#tbl02xB1").html( web3.toAscii(res[0]) );   
+                  $("#tbl02xC1").html( web3.toAscii(res[1]) );   
+                  $("#tbl02xD1").html( web3.toAscii(res[2]) );   
                      
            }  
         });   
 
  
  
-    CarChain.displayCar((car01),(err, res3) => {
-           if (res3) {
+    CarChain.displayCar((car01),(err, res) => {
+           if (res) {
                  $("#tbl01xA1").html( car01 );   
-                 $("#tbl01xB1").html( web3.toAscii(res3[0]) );   
-                 $("#tbl01xC1").html( web3.toAscii(res3[4]) );   
-                 $("#tbl01xD1").html( web3.toAscii(res3[5]) );   
-                 $("#tbl01xE1").html( web3.toAscii(res3[1]) );                    
+                 $("#tbl01xB1").html( web3.toAscii(res[0]) );   
+                 $("#tbl01xC1").html( web3.toAscii(res[4]) );   
+                 $("#tbl01xD1").html( web3.toAscii(res[5]) );   
+                 $("#tbl01xE1").html( web3.toAscii(res[1]) );                    
            }  
         });   
 
-    CarChain.displayCar((car02),(err, res3) => {
-           if (res3) {
+    CarChain.displayCar((car02),(err, res) => {
+           if (res) {
                  $("#tbl01xA2").html( car02 );   
-                 $("#tbl01xB2").html( web3.toAscii(res3[0]) );   
-                 $("#tbl01xC2").html( web3.toAscii(res3[4]) );   
-                 $("#tbl01xD2").html( web3.toAscii(res3[5]) );   
-                 $("#tbl01xE2").html( web3.toAscii(res3[1]) );                    
+                 $("#tbl01xB2").html( web3.toAscii(res[0]) );   
+                 $("#tbl01xC2").html( web3.toAscii(res[4]) );   
+                 $("#tbl01xD2").html( web3.toAscii(res[5]) );   
+                 $("#tbl01xE2").html( web3.toAscii(res[1]) );                    
            }  
         });   
 
-    CarChain.displayCar((car03),(err, res3) => {
-           if (res3) {
+    CarChain.displayCar((car03),(err, res) => {
+           if (res) {
                  $("#tbl01xA3").html( car03 );   
-                 $("#tbl01xB3").html( web3.toAscii(res3[0]) );   
-                 $("#tbl01xC3").html( web3.toAscii(res3[4]) );   
-                 $("#tbl01xD3").html( web3.toAscii(res3[5]) );   
-                 $("#tbl01xE3").html( web3.toAscii(res3[1]) );                    
+                 $("#tbl01xB3").html( web3.toAscii(res[0]) );   
+                 $("#tbl01xC3").html( web3.toAscii(res[4]) );   
+                 $("#tbl01xD3").html( web3.toAscii(res[5]) );   
+                 $("#tbl01xE3").html( web3.toAscii(res[1]) );                    
            }  
         });   
 
-    CarChain.displayCar((car04),(err, res3) => {
-           if (res3) {
+    CarChain.displayCar((car04),(err, res) => {
+           if (res) {
                  $("#tbl01xA4").html( car04 );   
-                 $("#tbl01xB4").html( web3.toAscii(res3[0]) );   
-                 $("#tbl01xC4").html( web3.toAscii(res3[4]) );   
-                 $("#tbl01xD4").html( web3.toAscii(res3[5]) );   
-                 $("#tbl01xE4").html( web3.toAscii(res3[1]) );                    
+                 $("#tbl01xB4").html( web3.toAscii(res[0]) );   
+                 $("#tbl01xC4").html( web3.toAscii(res[4]) );   
+                 $("#tbl01xD4").html( web3.toAscii(res[5]) );   
+                 $("#tbl01xE4").html( web3.toAscii(res[1]) );                    
            }  
         });   
 
-   CarChain.displayCar((car05),(err, res3) => {
-           if (res3) {
+   CarChain.displayCar((car05),(err, res) => {
+           if (res) {
                  $("#tbl01xA5").html( car05 );   
-                 $("#tbl01xB5").html( web3.toAscii(res3[0]) );   
-                 $("#tbl01xC5").html( web3.toAscii(res3[4]) );   
-                 $("#tbl01xD5").html( web3.toAscii(res3[5]) );   
-                 $("#tbl01xE5").html( web3.toAscii(res3[1]) );  
+                 $("#tbl01xB5").html( web3.toAscii(res[0]) );   
+                 $("#tbl01xC5").html( web3.toAscii(res[4]) );   
+                 $("#tbl01xD5").html( web3.toAscii(res[5]) );   
+                 $("#tbl01xE5").html( web3.toAscii(res[1]) );  
                  
            }  
         });   
 
-   CarChain.displayCar((car06),(err, res3) => {
-           if (res3) {
+   CarChain.displayCar((car06),(err, res) => {
+           if (res) {
                  $("#tbl01xA6").html( car06 );   
-                 $("#tbl01xB6").html( web3.toAscii(res3[0]) );   
-                 $("#tbl01xC6").html( web3.toAscii(res3[4]) );   
-                 $("#tbl01xD6").html( web3.toAscii(res3[5]) );   
-                 $("#tbl01xE6").html( web3.toAscii(res3[1]) );  
+                 $("#tbl01xB6").html( web3.toAscii(res[0]) );   
+                 $("#tbl01xC6").html( web3.toAscii(res[4]) );   
+                 $("#tbl01xD6").html( web3.toAscii(res[5]) );   
+                 $("#tbl01xE6").html( web3.toAscii(res[1]) );  
                  
            }  
         });   
         
   
-    CarChain.displayCar((car07),(err, res3) => {
-           if (res3) {
+    CarChain.displayCar((car07),(err, res) => {
+           if (res) {
                  $("#tbl01xA7").html( car07 );   
-                 $("#tbl01xB7").html( web3.toAscii(res3[0]) );   
-                 $("#tbl01xC7").html( web3.toAscii(res3[4]) );   
-                 $("#tbl01xD7").html( web3.toAscii(res3[5]) );   
-                 $("#tbl01xE7").html( web3.toAscii(res3[1]) );  
+                 $("#tbl01xB7").html( web3.toAscii(res[0]) );   
+                 $("#tbl01xC7").html( web3.toAscii(res[4]) );   
+                 $("#tbl01xD7").html( web3.toAscii(res[5]) );   
+                 $("#tbl01xE7").html( web3.toAscii(res[1]) );  
                  
            }  
         });   
-   CarChain.displayCar((car08),(err, res3) => {
-           if (res3) {
+   CarChain.displayCar((car08),(err, res) => {
+           if (res) {
                  $("#tbl01xA8").html( car08 );   
-                 $("#tbl01xB8").html( web3.toAscii(res3[0]) );   
-                 $("#tbl01xC8").html( web3.toAscii(res3[4]) );   
-                 $("#tbl01xD8").html( web3.toAscii(res3[5]) );   
-                 $("#tbl01xE8").html( web3.toAscii(res3[1]) );  
+                 $("#tbl01xB8").html( web3.toAscii(res[0]) );   
+                 $("#tbl01xC8").html( web3.toAscii(res[4]) );   
+                 $("#tbl01xD8").html( web3.toAscii(res[5]) );   
+                 $("#tbl01xE8").html( web3.toAscii(res[1]) );  
                  
            }  
         });   
-   CarChain.displayCar((car09),(err, res3) => {
-           if (res3) {
+   CarChain.displayCar((car09),(err, res) => {
+           if (res) {
                  $("#tbl01xA9").html( car09 );   
-                 $("#tbl01xB9").html( web3.toAscii(res3[0]) );   
-                 $("#tbl01xC9").html( web3.toAscii(res3[4]) );   
-                 $("#tbl01xD9").html( web3.toAscii(res3[5]) );   
-                 $("#tbl01xE9").html( web3.toAscii(res3[1]) );  
+                 $("#tbl01xB9").html( web3.toAscii(res[0]) );   
+                 $("#tbl01xC9").html( web3.toAscii(res[4]) );   
+                 $("#tbl01xD9").html( web3.toAscii(res[5]) );   
+                 $("#tbl01xE9").html( web3.toAscii(res[1]) );  
                  
            }  
         });   
-   CarChain.displayCar((car10),(err, res3) => {
-           if (res3) {
+   CarChain.displayCar((car10),(err, res) => {
+           if (res) {
                  $("#tbl01xA10").html( car10 );   
-                 $("#tbl01xB10").html( web3.toAscii(res3[0]) );   
-                 $("#tbl01xC10").html( web3.toAscii(res3[4]) );   
-                 $("#tbl01xD10").html( web3.toAscii(res3[5]) );   
-                 $("#tbl01xE10").html( web3.toAscii(res3[1]) );  
+                 $("#tbl01xB10").html( web3.toAscii(res[0]) );   
+                 $("#tbl01xC10").html( web3.toAscii(res[4]) );   
+                 $("#tbl01xD10").html( web3.toAscii(res[5]) );   
+                 $("#tbl01xE10").html( web3.toAscii(res[1]) );  
                  
            }  
         });   
