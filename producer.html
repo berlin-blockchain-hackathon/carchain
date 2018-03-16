@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Car Registration</title>
+    <title>Car Producer</title>
 
     <link rel="stylesheet" type="text/css" href="main.css">
 
-    <script src="../node_modules/web3/dist/web3.min.js"></script>
+    <script src="./node_modules/web3/dist/web3.min.js"></script>
     <style>
 
     h1 { 
@@ -52,7 +52,7 @@
 <body>
     <div class="container">
 
-        <h1>Car Registration</h1>
+        <h1>Car Registration </h1>
         <span id="firm_details"></span> 
         
         
@@ -62,6 +62,8 @@
     <td id="tbl02xB1"></td>
     <td id="tbl02xC1"></td>
     <td id="tbl02xD1"></td>
+    <td id="tbl02xE1"></td>
+    <td id="tbl02xF1"></td>
   </tr>
  </table>
               
@@ -69,9 +71,6 @@
   
         <h2>Register a  single car</h2>
  
-
-        <img id="loader" src="https://loading.io/spinners/double-ring/lg.double-ring-spinner.gif">
-
         <label for="carAdr" class="col-lg-2 control-label">Blockchain Adresse</label>
         <input id="carAdr" type="text">
 
@@ -83,7 +82,14 @@
 
         <button id="button1">Produce Item</button>
 
-       <hr>
+        <img id="loader" src="https://loading.io/spinners/double-ring/lg.double-ring-spinner.gif">
+ 
+        <span id="transactionOk"></span>
+        <span id="registration"></span>
+
+
+ 		  <br>
+        <hr>
      
 
         <h2>Car Details by Blockchain Address</h2>
@@ -100,6 +106,7 @@
     <th>Owner</th>
 
   </tr>
+
   <tr>
     <td id="tbl01xA1"></td>
     <td id="tbl01xB1"></td>
@@ -185,424 +192,11 @@
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 
+    <script src="./abi.js"></script>
+
+
+
     <script>
-        if (typeof web3 !== 'undefined') {
-            web3 = new Web3(web3.currentProvider);
-        } else {
-            // set the provider you want from Web3.providers
-            web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:3000"));
-        }
-
-        web3.eth.defaultAccount = web3.eth.accounts[0];
-       
-       
-        var MyContract = web3.eth.contract([
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "carAccts",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "aCarAdr",
-				"type": "address"
-			}
-		],
-		"name": "displayCar",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bytes32"
-			},
-			{
-				"name": "",
-				"type": "bytes32"
-			},
-			{
-				"name": "",
-				"type": "bytes32"
-			},
-			{
-				"name": "",
-				"type": "bytes32"
-			},
-			{
-				"name": "",
-				"type": "bytes32"
-			},
-			{
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "aFirmAdr",
-				"type": "address"
-			}
-		],
-		"name": "displayFirm",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bytes32"
-			},
-			{
-				"name": "",
-				"type": "bytes32"
-			},
-			{
-				"name": "",
-				"type": "bytes32"
-			},
-			{
-				"name": "",
-				"type": "uint8"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "firmAccts",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "aCarAdr",
-				"type": "address"
-			},
-			{
-				"name": "_noEntries",
-				"type": "uint32"
-			}
-		],
-		"name": "getPart",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bytes32"
-			},
-			{
-				"name": "",
-				"type": "bytes32"
-			},
-			{
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getNoOfFirms",
-		"outputs": [
-			{
-				"name": "retno",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getNoOfCars",
-		"outputs": [
-			{
-				"name": "retno",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "aCarAdr",
-				"type": "address"
-			},
-			{
-				"name": "_noEntries",
-				"type": "uint32"
-			}
-		],
-		"name": "getMilage",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint32"
-			},
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "counter",
-				"type": "uint256"
-			}
-		],
-		"name": "getCarAdr",
-		"outputs": [
-			{
-				"name": "retno",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "counter",
-				"type": "uint256"
-			}
-		],
-		"name": "getFirmAdr",
-		"outputs": [
-			{
-				"name": "retno",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "aCarAdr",
-				"type": "address"
-			},
-			{
-				"name": "_partNo",
-				"type": "bytes32"
-			},
-			{
-				"name": "_partType",
-				"type": "bytes32"
-			}
-		],
-		"name": "setPart",
-		"outputs": [
-			{
-				"name": "_noEntries",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "eCarAddress",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"name": "eType",
-				"type": "bytes32"
-			},
-			{
-				"indexed": false,
-				"name": "eSerial",
-				"type": "bytes32"
-			}
-		],
-		"name": "carInfo",
-		"type": "event"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "aCarAdr",
-				"type": "address"
-			},
-			{
-				"name": "_to",
-				"type": "address"
-			}
-		],
-		"name": "sellCar",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "aFirmName",
-				"type": "bytes32"
-			},
-			{
-				"name": "aFirmLocation",
-				"type": "bytes32"
-			},
-			{
-				"name": "aFirmStreet",
-				"type": "bytes32"
-			},
-			{
-				"name": "aFirmType",
-				"type": "uint8"
-			}
-		],
-		"name": "registerFirm",
-		"outputs": [
-			{
-				"name": "retno",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "aCarAdr",
-				"type": "address"
-			},
-			{
-				"name": "aCarType",
-				"type": "bytes32"
-			},
-			{
-				"name": "aCarSerial",
-				"type": "bytes32"
-			}
-		],
-		"name": "registerCar",
-		"outputs": [
-			{
-				"name": "_noOfCars",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "eName",
-				"type": "bytes32"
-			}
-		],
-		"name": "firmInfo",
-		"type": "event"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "aCarAdr",
-				"type": "address"
-			},
-			{
-				"name": "miles",
-				"type": "uint32"
-			}
-		],
-		"name": "setMilage",
-		"outputs": [
-			{
-				"name": "_noEntries",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	}
-]);
-
-     var CarChain = MyContract.at('0xfb586e1bcd9090e92a4720189a41a82bff165fe2');
-  
      var car01 = '0x7a701451dC7aE33c23a5349B378c6950a8044f0E';
      var car02 = '0xf4B02651b117f0EfeB853127A78bA958eB74FAe0';
      var car03 = '0x4B20f638da74193c9B6c84E134d784C54a3aE5Be';
@@ -614,37 +208,12 @@
      var car09 = '0x505B54a76C2C4c3F6E84e8430d208219B996CdF0';
      var car10 = '0xbF587b829DF36719d9051b6fb98D985ac7462964';
    
-     
-         
+     var cars= ['0x7a701451dC7aE33c23a5349B378c6950a8044f0E', '0xf4B02651b117f0EfeB853127A78bA958eB74FAe0'];
+             
     var firm01 = '0x46aed27379c94784160b56b89ee1564de0cf11db';
       
 
-  
-     $("#qr").hide(); 
-  
-    
-    
-    CarChain.getFirmAdr((0),(err, res) => {
-           if (res) {
-               myAcc= web3.eth.defaultAccount;
-               $("#tbl02xA1").html(myAcc);
-                 
-           }  
-        });   
-        
-        
-    
-    CarChain.displayFirm((firm01),(err, res) => {
-           if (res) {
-                  //$("#tbl02xA1").html( firm01 );   
-                  $("#tbl02xB1").html( web3.toAscii(res[0]) );   
-                  $("#tbl02xC1").html( web3.toAscii(res[1]) );   
-                  $("#tbl02xD1").html( web3.toAscii(res[2]) );   
-                     
-           }  
-        });   
-
- 
+    function displayCars() {
  
     CarChain.displayCar((car01),(err, res) => {
            if (res) {
@@ -750,8 +319,95 @@
            }  
         });   
     
+  } //end of function displayCars
 
+
+
+
+  
+     $("#qr").hide(); 
+
+
+
+
+
+ //event
+     var carCreationEvent = CarChain.carInfo({}, 'latest');
+
+ 
+    carCreationEvent.watch(function (err, result) {
+    if (!err) {
+        if (result.blockHash != $("#transactionOk").html()) 
+            $("#loader").hide();
+            
+        $("#transactionOk").html('<font color="grey"> Block hash: ' +result.blockHash + '</font><br>');
+        $("#registration").html(
+                 '<font color="grey"> Last Registration: ' + 
+                 (result.args.eCarAddress) + ' ' + 'Type: ' + 
+                 web3.toAscii(result.args.eType) + ' ' + 
+                 '</font><br><br> '
+                 );
+        displayCars();  
+        console.log (result.args.eCarAddress);
+        console.log (result.args.eType);
+        console.log (result.args.eSerial);
         
+       
+    } else {
+        $("#loader").hide();
+    }
+  });
+//end event 
+    
+    
+ /*   CarChain.getFirmAdr((0),(err, res) => {
+           if (res) {
+               myAcc= web3.eth.defaultAccount;
+               $("#tbl02xA1").html(myAcc);
+                 
+           }  
+        });   
+        
+        
+*/
+      
+    
+    CarChain.displayFirm((firm01),(err, res) => {
+           if (res) {
+                  //$("#tbl02xA1").html( firm01 );
+                  var myAcc = web3.eth.defaultAccount;
+                  $("#tbl02xA1").html(myAcc);
+                  $("#tbl02xB1").html( web3.toAscii(res[0]) );   
+                  $("#tbl02xC1").html( web3.toAscii(res[1]) );   
+                  $("#tbl02xD1").html( web3.toAscii(res[2]) );   
+                     
+           }  
+        });   
+
+    CarChain.balanceOf((firm01),(err, res) => {
+           if (res) {
+                        $("#tbl02xE1").html( res.c +' €' );                     
+           }  
+        });   
+ 
+    web3.eth.getBalance(firm01, function(error, result){
+            if(!error){
+               var myBala=result/1000000000/1000000/1000;
+               var num= myBala.toFixed(3)
+               console.log('balance'+ JSON.stringify(result))   ;
+               $("#tbl02xF1").html(num  + ' Ether'); 
+            }
+                
+            else
+               console.error(error);
+        });
+
+   
+    
+  
+ 
+  
+  displayCars();        
      
     $("#button1").click(
     	function() {
