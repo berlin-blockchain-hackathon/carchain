@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Car Workshop</title>
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+  
+
+    <script src="../node_modules/web3/dist/web3.min.js"></script>
+    <style>
+
+    h1 { 
+       background-color: brown;
+       color: white;
+    }
+    
+ 
+    </style>
+    
+    <style>
+       table {
+        width:90%;
+       }
+       table, th, td {
+           border: 1px solid black;
+           border-collapse: collapse;    
+       }
+       th, td {
+           padding: 5px;
+           text-align: left;
+       }    
+       table#t00, th, td {
+           border: 1px solid grey;
+           border-collapse: collapse;    
+       }
+       table#t01 tr:nth-child(even) {
+           background-color: #eee;
+       }
+       table#t01 tr:nth-child(odd) {
+           background-color:#fff;
+       }
+       table#t01 th {
+       background-color: gray;
+       color: white;
+       }   
+       
+       table#t02 tr:nth-child(even) {
+           background-color: #eee;
+       }
+       table#t02 tr:nth-child(odd) {
+           background-color:#fff;
+       }
+       table#t02 th {
+       background-color: grey;
+       color: white;
+       }
+       
+       table#t03 tr:nth-child(even) {
+           background-color: #eee;
+       }
+       table#t03 tr:nth-child(odd) {
+           background-color:#fff;
+       }
+       table#t03 th {
+       background-color: grey;
+       color: white;
+       }
+       
+       table#t04 tr:nth-child(even) {
+           background-color: #eee;
+       }
+       table#t04 tr:nth-child(odd) {
+           background-color:#fff;
+       }
+       table#t04 th {
+       background-color: grey;
+       color: white;
+       }
+       
+    </style>
+    
+    
+    
+</head>
+
+<body>
+
+
+
+
+<div class="container">
+
+       <h1>Demo Car Workshop Portal</h1>
+
+
+ <table id="t00">
+   <tr>
+    <td id="tbl00xA1"></td>
+    <td id="tbl00xB1"></td>
+    <td id="tbl00xC1"></td>
+    <td id="tbl00xD1"></td>
+    <td id="tbl00xE1"></td>
+    <td id="tbl00xF1"></td>
+    <td id="tbl00xG1"></td>
+  </tr>
+ </table>
+
+<br>
+<br>
+<hr> 
+
+<h2>Inspections and Repairs</h2>
+<span id="carDetails4"></span>
+ 
+<table id="t03">
+  <tr>
+    <th>No</th>
+    <th>Date</th>
+    <th>Reason</th>
+    <th>Details </th> 
+    <th>Car address</th> 
+    <th>Rep No</th> 
+    <th>Price</th> 
+    <th>Bill</th> 
+     
+  </tr>
+  <tr>
+    <td id="tbl03xA0"></td>
+    <td id="tbl03xB0"></td>
+    <td id="tbl03xC0"></td>
+    <td id="tbl03xD0"></td>
+    <td id="tbl03xE0"></td>
+    <td id="tbl03xF0"></td>
+    <td id="tbl03xG0"></td>
+    <td id="tbl03xH0"></td>
+  </tr>
+ <tr>
+    <td id="tbl03xA1"></td>
+    <td id="tbl03xB1"></td>
+    <td id="tbl03xC1"></td>
+    <td id="tbl03xD1"></td>
+    <td id="tbl03xE1"></td>
+    <td id="tbl03xF1"></td>
+    <td id="tbl03xG1"></td>
+    <td id="tbl03xH1"></td>
+  </tr>
+  <tr>
+    <td id="tbl03xA2"></td>
+    <td id="tbl03xB2"></td>
+    <td id="tbl03xC2"></td>
+    <td id="tbl03xD2"></td>
+    <td id="tbl03xE2"></td>
+    <td id="tbl03xF2"></td>
+    <td id="tbl03xG2"></td>
+    <td id="tbl03xH2"></td>
+  </tr>
+  <tr>
+    <td id="tbl03xA3"></td>
+    <td id="tbl03xB3"></td>
+    <td id="tbl03xC3"></td>
+    <td id="tbl03xD3"></td>
+    <td id="tbl03xE3"></td>
+    <td id="tbl03xF3"></td>
+    <td id="tbl03xG3"></td>
+    <td id="tbl03xH3"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl03xA4"></td>
+    <td id="tbl03xB4"></td>
+    <td id="tbl03xC4"></td>
+    <td id="tbl03xD4"></td>
+    <td id="tbl03xE4"></td>
+    <td id="tbl03xF4"></td>
+    <td id="tbl03xG4"></td>
+    <td id="tbl03xH4"></td>
+  </tr>
+  <tr>
+    <td id="tbl03xA5"></td>
+    <td id="tbl03xB5"></td>
+    <td id="tbl03xC5"></td>
+    <td id="tbl03xD5"></td>
+    <td id="tbl03xE5"></td>
+    <td id="tbl03xF5"></td>
+    <td id="tbl03xG5"></td>
+    <td id="tbl03xH5"></td>
+  </tr>
+  <tr>
+    <td id="tbl03xA6"></td>
+    <td id="tbl03xB6"></td>
+    <td id="tbl03xC6"></td>
+    <td id="tbl03xD6"></td>
+    <td id="tbl03xE6"></td>
+    <td id="tbl03xF6"></td>
+    <td id="tbl03xG6"></td>
+    <td id="tbl03xH6"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl03xA7"></td>
+    <td id="tbl03xB7"></td>
+    <td id="tbl03xC7"></td>
+    <td id="tbl03xD7"></td>
+    <td id="tbl03xE7"></td>
+    <td id="tbl03xF7"></td>
+    <td id="tbl03xG7"></td>
+    <td id="tbl03xH7"></td>
+  </tr>
+  <tr>
+    <td id="tbl03xA8"></td>
+    <td id="tbl03xB8"></td>
+    <td id="tbl03xC8"></td>
+    <td id="tbl03xD8"></td>
+    <td id="tbl03xE8"></td>
+    <td id="tbl03xF8"></td>
+    <td id="tbl03xG8"></td>
+    <td id="tbl03xH8"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl03xA9"></td>
+    <td id="tbl03xB9"></td>
+    <td id="tbl03xC9"></td>
+    <td id="tbl03xD9"></td>
+    <td id="tbl03xE9"></td>
+    <td id="tbl03xF9"></td>
+    <td id="tbl03xG9"></td>
+    <td id="tbl03xH9"></td>
+   </tr>
+ 
+</table>
+
+<br>
+<br>
+<h2>Book Repair</h2>
+
+        <label for="myAddress" class="col-lg-2 control-label">Car Address </label>
+        <input id="myAddress" type="text">
+        <label for="myReason" class="col-lg-2 control-label">Repair Reason </label>
+        <input id="myReason" type="text">
+        <label for="myDetails" class="col-lg-2 control-label">Repair Details </label>
+        <input id="myDetails" type="text">
+        <label for="myPrice" class="col-lg-2 control-label">Repair Price </label>
+        <input id="myPrice" type="text">
+
+        <button id="bookbutton">Book</button>    
+        <img id="loader" src="https://loading.io/spinners/double-ring/lg.double-ring-spinner.gif">
+
+<br>
+<br>
+        <span id="carDetails"></span>
+        <span id="carDetails0"></span>
+<hr>
+
+</div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+    <script src="./abi.js"></script>
+
+
+    <script>
+      
+     
+    var entryNo=0;
+     
+  
+  
+   //logged in as row /////////////////////////////////////////
+	function showLoggedInAs(){
+     var defaultAccount = web3.eth.defaultAccount;
+     console.log('currentAcc:' + defaultAccount);
+     $("#tbl00xA1").html('<font color="grey"> Logged in as:' );   
+     $("#tbl00xB1").html('<font color="grey">' + defaultAccount );   
+    
+    
+     CarChain.displayFirm((defaultAccount),(err, res) => {
+           if (res) {
+                 $("#tbl00xC1").html('<font color="grey">' + web3.toAscii(res[0]) );   
+                 $("#tbl00xD1").html('<font color="grey">' + web3.toAscii(res[1]) );   
+                 $("#tbl00xE1").html('<font color="grey">' + web3.toAscii(res[2]) +'</font>');                     
+           }  
+     });   
+  
+     CarChain.balanceOf((defaultAccount), (err, res) => {
+           if (res){
+                        $("#tbl00xF1").html(res.c +' €' );                     
+           }  
+     });   
+
+     web3.eth.getBalance(defaultAccount, function(error, result){
+            if(!error){
+               var myBala=result/1000000000/1000000/1000;
+               var num= myBala.toFixed(3)
+               console.log('balance'+ JSON.stringify(result))   ;
+               $("#tbl00xG1").html(num  + ' Ether'); 
+            }
+                
+     });
+  
+	} //end do logged in as row /////////////////////////////////////////
+  
+   
+     
+    
+    
+    
+
+
+    //Inspection  table/////////////////////////////////////////
+        
+    function displayRepairsDone () {
+    	
+  
+        entryno=0;
+   
+        CarChain.displayRepairDone(0,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[0]*1000);  
+                 console.log('0: ' + dateTime.toLocaleDateString()); 
+                 var paid
+                 if (res[6]==true) paid='paid'; else { paid= '<font color="red"> unpaid </font>'  }
+                 if (res[5]== 0) paid='none';
+                               
+                 if (res[0] !=0) {
+                    $("#tbl03xA0").html(' 0.'                         ); 
+                    $("#tbl03xB0").html( dateTime.toLocaleDateString()); 
+                    $("#tbl03xC0").html(' ' + web3.toAscii(res[1])    );    
+                    $("#tbl03xD0").html(' ' + web3.toAscii(res[2])    );    
+                    $("#tbl03xE0").html(' ' + (res[3])                );    
+                    $("#tbl03xF0").html(' ' + (res[4])                ); 
+                    $("#tbl03xG0").html(' ' + (res[5])  +' €'         ); 
+                    $("#tbl03xH0").html(' ' + (paid   )               ); 
+                       
+             
+                    
+                   } else {
+                    $("#tbl03xA0").html('---'); 
+                 }
+          }  
+        });   
+        entryno++;          
+   
+        CarChain.displayRepairDone(1,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[0]*1000);   
+                 console.log('1: ' + dateTime.toLocaleDateString()); 
+                 var paid
+                 if (res[6]==true) paid='paid'; else { paid= '<font color="red"> unpaid </font>'  }
+                 if (res[5]== 0) paid='none';
+                               
+                 if (res[0] !=0) {
+                    $("#tbl03xA1").html(' 1.'                         ); 
+                    $("#tbl03xB1").html( dateTime.toLocaleDateString()); 
+                    $("#tbl03xC1").html(' ' + web3.toAscii(res[1])    );    
+                    $("#tbl03xD1").html(' ' + web3.toAscii(res[2])    );    
+                    $("#tbl03xE1").html(' ' + (res[3])                );    
+                    $("#tbl03xF1").html(' ' + (res[4])                ); 
+                    $("#tbl03xG1").html(' ' + (res[5])  +' €'         ); 
+                    $("#tbl03xH1").html(' ' + (paid   )               ); 
+                       
+             
+                    
+                   } else {
+                    $("#tbl03xA1").html('---'); 
+                   }
+          }  
+        });   
+        entryno++;          
+ 
+  
+        CarChain.displayRepairDone(entryno,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[0]*1000);   
+                 var paid
+                 if (res[6]==true) paid='paid'; else { paid= '<font color="red"> unpaid </font>'  } 
+                 if (res[5]== 0) paid='none';
+                               
+                 if (res[0] !=0) {
+                    $("#tbl03xA2").html(' 2.'                         ); 
+                    $("#tbl03xB2").html( dateTime.toLocaleDateString()); 
+                    $("#tbl03xC2").html(' ' + web3.toAscii(res[1])    );    
+                    $("#tbl03xD2").html(' ' + web3.toAscii(res[2])    );    
+                    $("#tbl03xE2").html(' ' + (res[3])                );    
+                    $("#tbl03xF2").html(' ' + (res[4])                ); 
+                    $("#tbl03xG2").html(' ' + (res[5])  +' €'         ); 
+                    $("#tbl03xH2").html(' ' + (paid   )               ); 
+                       
+             
+                    
+                   } else {
+                    $("#tbl03xA2").html('---'); 
+                  }
+          }  
+        });   
+        entryno++;          
+ 
+  
+        CarChain.displayRepairDone(entryno,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[0]*1000);   
+                 var paid
+                 if (res[6]==true) paid='paid'; else { paid= '<font color="red"> unpaid </font>'  } 
+                 if (res[5]== 0) paid='none';
+                               
+                 if (res[0] !=0) {
+                    $("#tbl03xA3").html(' 3.'                         ); 
+                    $("#tbl03xB3").html( dateTime.toLocaleDateString()); 
+                    $("#tbl03xC3").html(' ' + web3.toAscii(res[1])    );    
+                    $("#tbl03xD3").html(' ' + web3.toAscii(res[2])    );    
+                    $("#tbl03xE3").html(' ' + (res[3])                );    
+                    $("#tbl03xF3").html(' ' + (res[4])                ); 
+                    $("#tbl03xG3").html(' ' + (res[5])  +' €'         ); 
+                    $("#tbl03xH3").html(' ' + (paid   )               ); 
+                       
+             
+                    
+                   } else {
+                    $("#tbl03xA3").html('---'); 
+                 }
+          }  
+        });   
+        entryno++;          
+ 
+  
+        CarChain.displayRepairDone(entryno,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[0]*1000);   
+                 var paid
+                 if (res[6]==true) paid='paid'; else { paid= '<font color="red"> unpaid </font>'  } 
+                 if (res[5]== 0) paid='none';
+                               
+                 if (res[0] !=0) {
+                    $("#tbl03xA4").html(' 4.'                         ); 
+                    $("#tbl03xB4").html( dateTime.toLocaleDateString()); 
+                    $("#tbl03xC4").html(' ' + web3.toAscii(res[1])    );    
+                    $("#tbl03xD4").html(' ' + web3.toAscii(res[2])    );    
+                    $("#tbl03xE4").html(' ' + (res[3])                );    
+                    $("#tbl03xF4").html(' ' + (res[4])                ); 
+                    $("#tbl03xG4").html(' ' + (res[5])  +' €'         ); 
+                    $("#tbl03xH4").html(' ' + (paid )                 ); 
+             
+                    
+                   } else {
+                    $("#tbl03xA4").html('---'); 
+                 }
+          }  
+        });   
+        entryno++;          
+ 
+  
+        CarChain.displayRepairDone(entryno,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[0]*1000);   
+                 var paid
+                 if (res[6]==true) paid='paid'; else { paid= '<font color="red"> unpaid </font>'  } 
+                 if (res[5]== 0) paid='none';
+                               
+                 if (res[0] !=0) {
+                    $("#tbl03xA5").html(' 5.'                         ); 
+                    $("#tbl03xB5").html( dateTime.toLocaleDateString()); 
+                    $("#tbl03xC5").html(' ' + web3.toAscii(res[1])    );    
+                    $("#tbl03xD5").html(' ' + web3.toAscii(res[2])    );    
+                    $("#tbl03xE5").html(' ' + (res[3])                );    
+                    $("#tbl03xF5").html(' ' + (res[4])                ); 
+                    $("#tbl03xG5").html(' ' + (res[5])  +' €'         ); 
+                    $("#tbl03xH5").html(' ' + (paid )                 ); 
+                    
+                   } else {
+                    $("#tbl03xA5").html('---'); 
+                 }
+          }  
+        });   
+        entryno++;          
+ 
+  
+        CarChain.displayRepairDone(entryno,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[0]*1000);   
+                 var paid
+                 if (res[6]==true) paid='paid'; else { paid= '<font color="red"> unpaid </font>'  } 
+                 if (res[5]== 0) paid='none';
+                               
+                 if (res[0] !=0) {
+                    $("#tbl03xA6").html(' 6.'                         ); 
+                    $("#tbl03xB6").html( dateTime.toLocaleDateString()); 
+                    $("#tbl03xC6").html(' ' + web3.toAscii(res[1])    );    
+                    $("#tbl03xD6").html(' ' + web3.toAscii(res[2])    );    
+                    $("#tbl03xE6").html(' ' + (res[3])                );    
+                    $("#tbl03xF6").html(' ' + (res[4])                ); 
+                    $("#tbl03xG6").html(' ' + (res[5])  +' €'         ); 
+                    $("#tbl03xH6").html(' ' + (paid )                 ); 
+                       
+             
+                    
+                   } else {
+                    $("#tbl03xA6").html('---'); 
+                 }
+          }  
+        });   
+        entryno++;          
+ 
+  
+        CarChain.displayRepairDone(entryno,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[0]*1000);   
+                 var paid
+                 if (res[6]==true) paid='paid'; else { paid= '<font color="red"> unpaid </font>'  } 
+                 if (res[5]== 0) paid='none';
+                               
+                 if (res[0] !=0) {
+                    $("#tbl03xA7").html(' 7.'                         ); 
+                    $("#tbl03xB7").html( dateTime.toLocaleDateString()); 
+                    $("#tbl03xC7").html(' ' + web3.toAscii(res[1])    );    
+                    $("#tbl03xD7").html(' ' + web3.toAscii(res[2])    );    
+                    $("#tbl03xE7").html(' ' + (res[3])                );    
+                    $("#tbl03xF7").html(' ' + (res[4])                ); 
+                    $("#tbl03xG7").html(' ' + (res[5])  +' €'         ); 
+                    $("#tbl03xH7").html(' ' + (paid )                 ); 
+                    
+                   } else {
+                    $("#tbl03xA7").html('---'); 
+                 }
+          }  
+        });   
+        entryno++;          
+ 
+      
+       CarChain.displayRepairDone(entryno,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[0]*1000);   
+                 var paid
+                 if (res[6]==true) paid='paid'; else { paid= '<font color="red"> unpaid </font>'  } 
+                 if (res[5]== 0) paid='none';
+                               
+                 if (res[0] !=0) {
+                    $("#tbl03xA8").html(' 8.'                         ); 
+                    $("#tbl03xB8").html( dateTime.toLocaleDateString()); 
+                    $("#tbl03xC8").html(' ' + web3.toAscii(res[1])    );    
+                    $("#tbl03xD8").html(' ' + web3.toAscii(res[2])    );    
+                    $("#tbl03xE8").html(' ' +             (res[3])    );    
+                    $("#tbl03xF8").html(' ' + (res[4])                ); 
+                    $("#tbl03xG8").html(' ' + (res[5]) +' €'          ); 
+                    $("#tbl03xH8").html(' ' + (paid )                 ); 
+                       
+             
+                    
+                   } else {
+                    $("#tbl03xA8").html('---'); 
+                  }
+          }  
+        });   
+        entryno++;          
+ 
+        CarChain.displayRepairDone(entryno,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[0]*1000);   
+                 var paid
+                 if (res[6]==true) paid='paid'; else { paid= '<font color="red"> unpaid </font>'  } 
+                 if (res[5]== 0) paid='none';
+                               
+                 if (res[0] !=0) {
+                    $("#tbl03xA9").html(' 9.'                         ); 
+                    $("#tbl03xB9").html( dateTime.toLocaleDateString()); 
+                    $("#tbl03xC9").html(' ' + web3.toAscii(res[1])    );    
+                    $("#tbl03xD9").html(' ' + web3.toAscii(res[2])    );    
+                    $("#tbl03xE7").html(' ' + (res[3])                );    
+                    $("#tbl03xF7").html(' ' + (res[4])                ); 
+                    $("#tbl03xG7").html(' ' + (res[5])  +' €'         ); 
+                    $("#tbl03xH7").html(' ' + (paid )                 ); 
+                       
+             
+                    
+                   } else {
+                    $("#tbl03xA9").html('---'); 
+                 }
+          }  
+        });   
+        entryno++;   
+        
+    	 }
+       // End of inspections table /////////////////////////////////////////////////// 
+ 
+
+
+
+     // Book Button.click  ///////////////////////////////////////////////////
+     $("#bookbutton").click(
+    	function() {
+    		
+    		CarChain.setRepair($("#myAddress").val(), $("#myReason").val(),$("#myDetails").val(),$("#myPrice").val(), (err, res) => {
+			$("#loader").show();  			      	
+        		if (err) 
+            	$("#loader").hide();
+      	});
+    });
+    // End of Button3.click  ///////////////////////////////////////////////////
+
+
+	// main loop   ///////////////////////////////////////////////////
+
+     showLoggedInAs();
+     displayRepairsDone();
+     // displaySparPartTable  --> still open  
+    
+
+
+
+    
+    </script>
+    
+    
+</body>
+</html>

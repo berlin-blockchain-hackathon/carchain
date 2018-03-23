@@ -209,13 +209,14 @@ contract CarChain  {
         return firmAccts.length;
     }
 
-    function displayFirm (address aFirmAdr)  public constant returns (bytes32, bytes32,bytes32,  Typeenum){
+    function displayFirm (address aFirmAdr)  public view returns (bytes32, bytes32,bytes32,  Typeenum){
        return (firms[aFirmAdr].nameOfFirm, firms[aFirmAdr].city, firms[aFirmAdr].street, firms[msg.sender].firmType);
     }   
 
     function setMilage (address aCarAdr, uint32 miles)  public returns (uint _noEntries) {
-        require ((msg.sender == cars[aCarAdr].owner)||(msg.sender == aCarAdr)); 
-
+        /*require ((msg.sender == cars[aCarAdr].owner)||(msg.sender == aCarAdr)); 
+        because || does not work
+        */ 
         Milage  memory currentMilage;
         currentMilage.timestamp=now;
         currentMilage.milage=miles;
@@ -225,7 +226,9 @@ contract CarChain  {
     }
 
     function getMilage (address aCarAdr, uint32 _noEntries)  view public returns (uint32, uint) {
-        require ((msg.sender == cars[aCarAdr].owner)||(msg.sender == aCarAdr)); 
+       /* require ((msg.sender == cars[aCarAdr].owner)||(msg.sender == aCarAdr)); 
+        because || does not work
+        */ 
         uint32  _milage= cars[aCarAdr].milages[_noEntries].milage;
         uint  _timestamp= cars[aCarAdr].milages[_noEntries].timestamp;
         
@@ -257,10 +260,12 @@ contract CarChain  {
     }
 
     function setRepair (address aCarAdr, bytes32 _reason, bytes32 _details, uint _price)  public  returns (uint _noEntries) {
-        require (
+        /* require (
             (msg.sender == cars[aCarAdr].owner) || 
             (firms[msg.sender].firmType == Typeenum.workshop)
             ); 
+        because || does not work
+        */ 
 
         Repair  memory currentRepair;
         currentRepair.timestamp   = now;
@@ -283,7 +288,7 @@ contract CarChain  {
         return cars[aCarAdr].repairs.length;
     }
 
-    function getRepair (address aCarAdr, uint32 _noEntries)  view public returns (uint, bytes32,bytes32,bytes32, uint, bool){
+    function getRepair (address aCarAdr, uint32 _noEntries)  public view returns (uint, bytes32,bytes32,bytes32, uint, bool){
         require (msg.sender == cars[aCarAdr].owner); 
         
         Repair  memory currentRepair;
@@ -306,7 +311,7 @@ contract CarChain  {
         );
     }
  
-     function displayRepairDone (uint32 _repNoFirm)  public constant returns (uint, bytes32,bytes32, bytes32, uint, bool){
+     function displayRepairDone (uint32 _repNoFirm)  public view returns (uint, bytes32, bytes32, address, uint, uint, bool){
        /*     require (
                 (firms[msg.sender].firmType == Typeenum.partproducer)||
                 (firms[msg.sender].firmType == Typeenum.seller)||
@@ -327,14 +332,13 @@ contract CarChain  {
         curRep.price       = cars[repAdr].repairs[repNoCar].price;
         curRep.paid        = cars[repAdr].repairs[repNoCar].paid;
   
-        bytes32 repairFirmName    = firms[curRep.doneBy].nameOfFirm;
-
-  
+    
         return (
              curRep.timestamp  ,
              curRep.reason     ,
              curRep.details    ,
-             repairFirmName    ,
+             repAdr            ,
+             repNoCar          ,
              curRep.price      ,
              curRep.paid       
         );
@@ -379,7 +383,7 @@ contract CarChain  {
         
     }
     
-    function displayCar (address aCarAdr)  public constant returns (bytes32, bytes32, bytes32, bytes32, bytes32, bytes32, uint){
+    function displayCar (address aCarAdr)  public view returns (bytes32, bytes32, bytes32, bytes32, bytes32, bytes32, uint){
        return (
            firms[cars[aCarAdr].producer].nameOfFirm, 
            firms[cars[aCarAdr].owner].nameOfFirm,
@@ -391,17 +395,18 @@ contract CarChain  {
            );
     }   
 
-    function displayMyCar (uint _counter)  public constant returns (bytes32, bytes32, bytes32, bytes32, bytes32, bytes32, uint, address){
+    function displayMyCar (uint _counter)  public view returns (bytes32, bytes32, bytes32, bytes32, uint, bool, address){
            address myCarAdr;
            myCarAdr= firms[msg.sender].myCarAccts[_counter];
+           bool billpaid=false;
+           if (cars[myCarAdr].nextOwner == 0x0 ) billpaid=true;
         return (
            firms[cars[myCarAdr].producer].nameOfFirm, 
-           firms[cars[myCarAdr].owner].nameOfFirm,
-           firms[cars[myCarAdr].owner].city,
-           firms[cars[myCarAdr].owner].street,
+           firms[cars[myCarAdr].owner].nameOfFirm, 
            cars[myCarAdr].cartype, 
            cars[myCarAdr].carSerial,
            cars[myCarAdr].price,
+           billpaid,
            myCarAdr
            );
     }   
@@ -449,7 +454,7 @@ contract CarChain  {
     
 
     function getNoOfCars () public view returns (uint retno) {
-       return carAccts.length;
+       return  firms[msg.sender].myCarAccts.length;
     }
 
     function getNoOfFirms () public view returns (uint retno) {

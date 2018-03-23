@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Car Owner</title>
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+  
+
+    <script src="../node_modules/web3/dist/web3.min.js"></script>
+    <style>
+
+    h1 { 
+       background-color: orange;
+       color: white;
+    }
+    
+    .grid-container {
+     display: grid;
+       grid-template-columns: 100px 380px 270px;
+       grid-template-rows: 130px 20px 30px 40px 40px 20px 80px 175px 35px 30px 85px 430px;
+       grid-gap: 2px;
+     padding: 10px;
+    }
+    .grid-container > div {
+     background-color: rgba(255, 255, 255, 0.1);
+     text-align: left;
+     padding: 20px 0 30px
+    }
+
+    </style>
+    
+    <style>
+       table {
+        width:80%;
+       }
+       table, th, td {
+           border: 1px solid black;
+           border-collapse: collapse;    
+       }
+       th, td {
+           padding: 5px;
+           text-align: left;
+       }    
+       table#t00 tr:nth-child(even) {
+           background-color: #eee;
+       }
+       table#t00 tr:nth-child(odd) {
+           background-color:#fff;
+       }
+       table#t00 th {
+       background-color: gray;
+       color: white;
+       }          table#t01 tr:nth-child(even) {
+           background-color: #eee;
+       }
+       table#t01 tr:nth-child(odd) {
+           background-color:#fff;
+       }
+       table#t01 th {
+       background-color: gray;
+       color: white;
+       }   
+       
+       table#t02 tr:nth-child(even) {
+           background-color: #eee;
+       }
+       table#t02 tr:nth-child(odd) {
+           background-color:#fff;
+       }
+       table#t02 th {
+       background-color: grey;
+       color: white;
+       }
+       
+       table#t03 tr:nth-child(even) {
+           background-color: #eee;
+       }
+       table#t03 tr:nth-child(odd) {
+           background-color:#fff;
+       }
+       table#t03 th {
+       background-color: grey;
+       color: white;
+       }
+       
+       table#t04 tr:nth-child(even) {
+           background-color: #eee;
+       }
+       table#t04 tr:nth-child(odd) {
+           background-color:#fff;
+       }
+       table#t04 th {
+       background-color: grey;
+       color: white;
+       }
+       table#t05 tr:nth-child(even) {
+           background-color: #eee;
+       }
+       table#t05 tr:nth-child(odd) {
+           background-color:#fff;
+       }
+       table#t05 th {
+       background-color: grey;
+       color: white;
+       }
+       
+    </style>
+    
+    
+    
+</head>
+
+<body>
+
+
+
+
+    <div class="container">
+
+       <h1> Car Owners Portal </h1>
+
+ <table id="t00">
+   <tr>
+    <td id="tbl00xA1"></td>
+    <td id="tbl00xB1"></td>
+    <td id="tbl00xC1"></td>
+    <td id="tbl00xD1"></td>
+    <td id="tbl00xE1"></td>
+    <td id="tbl00xF1"></td>
+    <td id="tbl00xG1"></td>
+  </tr>
+ </table>
+ 
+<br>
+
+<h2>Cars I own </h2>
+
+<table id="t01">
+  <tr>
+    <th>No</th>
+    <th>Address</th>
+    <th>Producer</th> 
+    <th>Type</th>
+    <th>Serial</th>
+    <th>Owner</th>
+    <th>Price</th>
+    <th>Bill</th>
+  </tr>
+ 		  <br>
+
+  <tr>
+    <td id="tbl01xA0"></td>
+    <td id="tbl01xB0"></td>
+    <td id="tbl01xC0"></td>
+    <td id="tbl01xD0"></td>
+    <td id="tbl01xE0"></td>  
+    <td id="tbl01xF0"></td>  
+    <td id="tbl01xG0"></td>  
+    <td id="tbl01xH0"></td>  
+ </tr>
+
+ <tr>
+    <td id="tbl01xA1"></td>
+    <td id="tbl01xB1"></td>
+    <td id="tbl01xC1"></td>
+    <td id="tbl01xD1"></td>
+    <td id="tbl01xE1"></td>  
+    <td id="tbl01xF1"></td>  
+    <td id="tbl01xG1"></td>  
+    <td id="tbl01xH1"></td>  
+ </tr>
+ 
+ <tr>
+    <td id="tbl01xA2"></td>
+    <td id="tbl01xB2"></td>
+    <td id="tbl01xC2"></td>
+    <td id="tbl01xD2"></td>
+    <td id="tbl01xE2"></td>  
+    <td id="tbl01xF2"></td>  
+    <td id="tbl01xG2"></td>  
+    <td id="tbl01xH2"></td>  
+ </tr>
+
+  <tr>
+    <td id="tbl01xA3"></td>
+    <td id="tbl01xB3"></td>
+    <td id="tbl01xC3"></td>
+    <td id="tbl01xD3"></td>
+    <td id="tbl01xE3"></td>  
+    <td id="tbl01xF3"></td>  
+    <td id="tbl01xG3"></td>  
+    <td id="tbl01xH3"></td>  
+ </tr>
+
+ <tr>
+    <td id="tbl01xA4"></td>
+    <td id="tbl01xB4"></td>
+    <td id="tbl01xC4"></td>
+    <td id="tbl01xD4"></td>
+    <td id="tbl01xE4"></td>  
+    <td id="tbl01xF4"></td>  
+    <td id="tbl01xG4"></td>  
+    <td id="tbl01xH4"></td>  
+ </tr>
+
+
+ <tr>
+    <td id="tbl01xA5"></td>
+    <td id="tbl01xB5"></td>
+    <td id="tbl01xC5"></td>
+    <td id="tbl01xD5"></td>
+    <td id="tbl01xE5"></td>  
+    <td id="tbl01xF5"></td>  
+    <td id="tbl01xG5"></td>  
+    <td id="tbl01xH5"></td>  
+ </tr>
+
+ <tr>
+    <td id="tbl01xA6"></td>
+    <td id="tbl01xB6"></td>
+    <td id="tbl01xC6"></td>
+    <td id="tbl01xD6"></td>
+    <td id="tbl01xE6"></td>  
+    <td id="tbl01xF6"></td>  
+    <td id="tbl01xG6"></td>  
+    <td id="tbl01xH6"></td>  
+ </tr>
+
+ <tr>
+    <td id="tbl01xA7"></td>
+    <td id="tbl01xB7"></td>
+    <td id="tbl01xC7"></td>
+    <td id="tbl01xD7"></td>
+    <td id="tbl01xE7"></td>  
+    <td id="tbl01xF7"></td>  
+    <td id="tbl01xG7"></td>  
+    <td id="tbl01xH7"></td>  
+ </tr>
+
+ <tr>
+    <td id="tbl01xA8"></td>
+    <td id="tbl01xB8"></td>
+    <td id="tbl01xC8"></td>
+    <td id="tbl01xD8"></td>
+    <td id="tbl01xE8"></td>  
+    <td id="tbl01xF8"></td>  
+    <td id="tbl01xG8"></td>  
+    <td id="tbl01xH8"></td>  
+ </tr>
+
+ <tr>
+    <td id="tbl01xA9"></td>
+    <td id="tbl01xB9"></td>
+    <td id="tbl01xC9"></td>
+    <td id="tbl01xD9"></td>
+    <td id="tbl01xE9"></td>  
+    <td id="tbl01xF9"></td>  
+    <td id="tbl01xG9"></td>  
+    <td id="tbl01xH9"></td>  
+</tr>
+</table>
+
+		<br>
+        <label for="myCarNo" class="col-lg-2 control-label">Car Details by car no (0..9)</label>
+        <input id="myCarNo" type="text">
+        <button id="CarServices">Display car services </button>  
+        <p style="margin-bottom: 0cm; line-height: 100%"><a href="./mylicence.html">Link to licence page</a></p>
+
+</div>
+
+<br>
+<br>
+<hr>
+<h2>Exchanged Spare parts</h2>
+<span id="carDetails3"></span>
+ 
+<table id="t02">
+  <tr>
+    <th>Insterted</th>
+    <th>Part</th>
+    <th>Serial </th> 
+    <th>by</th> 
+  </tr>
+  <tr>
+    <td id="tbl02xA0"></td>
+    <td id="tbl02xB0"></td>
+    <td id="tbl02xC0"></td>
+    <td id="tbl02xD0"></td>
+  </tr>
+ <tr>
+    <td id="tbl02xA1"></td>
+    <td id="tbl02xB1"></td>
+    <td id="tbl02xC1"></td>
+    <td id="tbl02xD1"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl02xA2"></td>
+    <td id="tbl02xB2"></td>
+    <td id="tbl02xC2"></td>
+    <td id="tbl02xD2"></td>
+  </tr>
+  <tr>
+    <td id="tbl02xA3"></td>
+    <td id="tbl02xB3"></td>
+    <td id="tbl02xC3"></td>
+    <td id="tbl02xD3"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl02xA4"></td>
+    <td id="tbl02xB4"></td>
+    <td id="tbl02xC4"></td>
+    <td id="tbl02xD4"></td>
+   </tr>
+  <tr>
+    <td id="tbl02xA5"></td>
+    <td id="tbl02xB5"></td>
+    <td id="tbl02xC5"></td>
+    <td id="tbl02xD5"></td>
+  </tr>
+  <tr>
+    <td id="tbl02xA6"></td>
+    <td id="tbl02xB6"></td>
+    <td id="tbl02xC6"></td>
+    <td id="tbl02xD6"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl02xA7"></td>
+    <td id="tbl02xB7"></td>
+    <td id="tbl02xC7"></td>
+    <td id="tbl02xD7"></td>
+  </tr>
+  <tr>
+    <td id="tbl02xA8"></td>
+    <td id="tbl02xB8"></td>
+    <td id="tbl02xC8"></td>
+    <td id="tbl02xD8"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl02xA9"></td>
+    <td id="tbl02xB9"></td>
+    <td id="tbl02xC9"></td>
+    <td id="tbl02xD9"></td>
+   </tr>
+ 
+</table>
+
+<br>
+<br>
+<hr>
+<h2>Inspections and Repairs</h2>
+<span id="carDetails4"></span>
+ 
+<table id="t03">
+  <tr>
+    <th>No</th>
+    <th>Date</th>
+    <th>Reason</th>
+    <th>Details </th> 
+    <th>done by</th> 
+    <th>Price</th> 
+    <th>Bill</th> 
+     
+  </tr>
+  <tr>
+    <td id="tbl03xA0"></td>
+    <td id="tbl03xB0"></td>
+    <td id="tbl03xC0"></td>
+    <td id="tbl03xD0"></td>
+    <td id="tbl03xE0"></td>
+    <td id="tbl03xF0"></td>
+    <td id="tbl03xG0"></td>
+  </tr>
+ <tr>
+    <td id="tbl03xA1"></td>
+    <td id="tbl03xB1"></td>
+    <td id="tbl03xC1"></td>
+    <td id="tbl03xD1"></td>
+    <td id="tbl03xE1"></td>
+    <td id="tbl03xF1"></td>
+    <td id="tbl03xG1"></td>
+  </tr>
+  <tr>
+    <td id="tbl03xA2"></td>
+    <td id="tbl03xB2"></td>
+    <td id="tbl03xC2"></td>
+    <td id="tbl03xD2"></td>
+    <td id="tbl03xE2"></td>
+    <td id="tbl03xF2"></td>
+    <td id="tbl03xG2"></td>
+  </tr>
+  <tr>
+    <td id="tbl03xA3"></td>
+    <td id="tbl03xB3"></td>
+    <td id="tbl03xC3"></td>
+    <td id="tbl03xD3"></td>
+    <td id="tbl03xE3"></td>
+    <td id="tbl03xF3"></td>
+    <td id="tbl03xG3"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl03xA4"></td>
+    <td id="tbl03xB4"></td>
+    <td id="tbl03xC4"></td>
+    <td id="tbl03xD4"></td>
+    <td id="tbl03xE4"></td>
+    <td id="tbl03xF4"></td>
+    <td id="tbl03xG4"></td>
+  </tr>
+  <tr>
+    <td id="tbl03xA5"></td>
+    <td id="tbl03xB5"></td>
+    <td id="tbl03xC5"></td>
+    <td id="tbl03xD5"></td>
+    <td id="tbl03xE5"></td>
+    <td id="tbl03xF5"></td>
+    <td id="tbl03xG5"></td>
+  </tr>
+  <tr>
+    <td id="tbl03xA6"></td>
+    <td id="tbl03xB6"></td>
+    <td id="tbl03xC6"></td>
+    <td id="tbl03xD6"></td>
+    <td id="tbl03xE6"></td>
+    <td id="tbl03xF6"></td>
+    <td id="tbl03xG6"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl03xA7"></td>
+    <td id="tbl03xB7"></td>
+    <td id="tbl03xC7"></td>
+    <td id="tbl03xD7"></td>
+    <td id="tbl03xE7"></td>
+    <td id="tbl03xF7"></td>
+    <td id="tbl03xG7"></td>
+  </tr>
+  <tr>
+    <td id="tbl03xA8"></td>
+    <td id="tbl03xB8"></td>
+    <td id="tbl03xC8"></td>
+    <td id="tbl03xD8"></td>
+    <td id="tbl03xE8"></td>
+    <td id="tbl03xF8"></td>
+    <td id="tbl03xG8"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl03xA9"></td>
+    <td id="tbl03xB9"></td>
+    <td id="tbl03xC9"></td>
+    <td id="tbl03xD9"></td>
+    <td id="tbl03xE9"></td>
+    <td id="tbl03xF9"></td>
+    <td id="tbl03xG9"></td>
+   </tr>
+ 
+</table>
+
+<br>
+<h2>Pay Repair</h2>
+        <label for="myNo" class="col-lg-2 control-label">Repair Number </label>
+        <input id="myNo" type="text">
+
+        <button id="payRepairButton">Pay Repair</button>    
+        <img id="loader" src="https://loading.io/spinners/double-ring/lg.double-ring-spinner.gif">
+
+<hr>
+<h2>Financial transactions of car</h2>
+<span id="carDetails5"></span>
+<span id="carDetails6"></span>
+<span id="carDetails7"></span>
+<span id="carDetails8"></span>
+
+  
+<table id="t04">
+  <tr>
+    <th>Date    </th>
+    <th>Amount  </th>
+    <th>Details </th> 
+    <th>done by </th> 
+  </tr>
+  <tr>
+    <td id="tbl04xA0"></td>
+    <td id="tbl04xB0"></td>
+    <td id="tbl04xC0"></td>
+    <td id="tbl04xD0"></td>
+  </tr>
+ <tr>
+    <td id="tbl04xA1"></td>
+    <td id="tbl04xB1"></td>
+    <td id="tbl04xC1"></td>
+    <td id="tbl04xD1"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl04xA2"></td>
+    <td id="tbl04xB2"></td>
+    <td id="tbl04xC2"></td>
+    <td id="tbl04xD2"></td>
+  </tr>
+  <tr>
+    <td id="tbl04xA3"></td>
+    <td id="tbl04xB3"></td>
+    <td id="tbl04xC3"></td>
+    <td id="tbl04xD3"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl04xA4"></td>
+    <td id="tbl04xB4"></td>
+    <td id="tbl04xC4"></td>
+    <td id="tbl04xD4"></td>
+   </tr>
+  <tr>
+    <td id="tbl04xA5"></td>
+    <td id="tbl04xB5"></td>
+    <td id="tbl04xC5"></td>
+    <td id="tbl04xD5"></td>
+  </tr>
+  <tr>
+    <td id="tbl04xA6"></td>
+    <td id="tbl04xB6"></td>
+    <td id="tbl04xC6"></td>
+    <td id="tbl04xD6"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl04xA7"></td>
+    <td id="tbl04xB7"></td>
+    <td id="tbl04xC7"></td>
+    <td id="tbl04xD7"></td>
+  </tr>
+  <tr>
+    <td id="tbl04xA8"></td>
+    <td id="tbl04xB8"></td>
+    <td id="tbl04xC8"></td>
+    <td id="tbl04xD8"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl04xA9"></td>
+    <td id="tbl04xB9"></td>
+    <td id="tbl04xC9"></td>
+    <td id="tbl04xD9"></td>
+   </tr>
+ 
+</table>
+
+<hr>
+<h2>Speedometer (milage recordings)</h2>
+<span id="carDetails2"></span>
+ 
+<table id="t05">
+  <tr>
+    <th>Entry</th>
+    <th>Date</th>
+    <th>Tacho </th> 
+  </tr>
+  <tr>
+    <td id="tbl05xA1"></td>
+    <td id="tbl05xB1"></td>
+    <td id="tbl05xC1"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl05xA2"></td>
+    <td id="tbl05xB2"></td>
+    <td id="tbl05xC2"></td>
+  </tr>
+  <tr>
+    <td id="tbl05xA3"></td>
+    <td id="tbl05xB3"></td>
+    <td id="tbl05xC3"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl05xA4"></td>
+    <td id="tbl05xB4"></td>
+    <td id="tbl05xC4"></td>
+   </tr>
+  <tr>
+    <td id="tbl05xA5"></td>
+    <td id="tbl05xB5"></td>
+    <td id="tbl05xC5"></td>
+  </tr>
+  <tr>
+    <td id="tbl05xA6"></td>
+    <td id="tbl05xB6"></td>
+    <td id="tbl05xC6"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl05xA7"></td>
+    <td id="tbl05xB7"></td>
+    <td id="tbl05xC7"></td>
+  </tr>
+  <tr>
+    <td id="tbl05xA8"></td>
+    <td id="tbl05xB8"></td>
+    <td id="tbl05xC8"></td>
+ 
+  </tr>
+  <tr>
+    <td id="tbl05xA9"></td>
+    <td id="tbl05xB9"></td>
+    <td id="tbl05xC9"></td>
+   </tr>
+  <tr>
+    <td id="tbl05xA10"></td>
+    <td id="tbl05xB10"></td>
+    <td id="tbl05xC10"></td>
+  </tr>
+
+</table>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+    <script src="./abi.js"></script>
+
+
+    <script>
+  
+    //	window.location.reload(true);  // does not work, force reload with crtl shft r
+	
+
+   //logged in as row /////////////////////////////////////////
+	function showLoggedInAs() {
+     var defaultAccount = web3.eth.defaultAccount;
+     console.log('currentAcc:' + defaultAccount);
+     $("#tbl00xA1").html( 'Logged in as:' );   
+     $("#tbl00xB1").html( defaultAccount );   
+    
+    
+     CarChain.displayFirm((defaultAccount),(err, res) => {
+           if (res) {
+                 $("#tbl00xC1").html( web3.toAscii(res[0]) );   
+                 $("#tbl00xD1").html( web3.toAscii(res[1]) );   
+                 $("#tbl00xE1").html( web3.toAscii(res[2]) );                     
+           }  
+     });   
+  
+     CarChain.balanceOf((defaultAccount),(err, res) => {
+           if (res) {
+                        $("#tbl00xF1").html( res.c +' €' );                     
+           }  
+     });   
+
+     web3.eth.getBalance(defaultAccount, function(error, result){
+            if(!error){
+               var myBala=result/1000000000/1000000/1000;
+               var num= myBala.toFixed(3)
+               console.log('balance'+ JSON.stringify(result))   ;
+               $("#tbl00xG1").html(num  + ' Ether'); 
+            }
+                
+     });
+  
+     //end do logged in as row /////////////////////////////////////////
+	}
+   
+    //my owned Car details table /////////////////////////////////////////
+	function displayMyCars()  {      
+
+    CarChain.displayMyCar((0),(err, res) => {
+			var bill = '<font color="red"> unpaid </font>';
+			if (res[5] == true) {bill = 'paid';} 
+			if (res[4] == 0      ) {bill = 'none';} 
+           
+           if (res) {
+                 $("#tbl01xA0").html( ' 0:'                 );   
+                 $("#tbl01xB0").html( res[6]               );   
+                 $("#tbl01xC0").html( web3.toAscii(res[0]) );   
+                 $("#tbl01xD0").html( web3.toAscii(res[2]) );   
+                 $("#tbl01xE0").html( web3.toAscii(res[3]) );   
+                 $("#tbl01xF0").html( web3.toAscii(res[1]) );                                       
+                 $("#tbl01xG0").html( (res[4]) + ' €'      );                                                                        
+                 $("#tbl01xH0").html( bill                  );                                                                        
+           }  
+        });   
+
+    CarChain.displayMyCar((1),(err, res) => {
+			var bill = '<font color="red"> unpaid </font>';
+			if (res[5] == true ) {bill = 'paid';} 
+			if (res[4] == 0      ) {bill = 'none';} 
+           
+           if (res) {
+                 $("#tbl01xA1").html( ' 1:'                 );   
+                 $("#tbl01xB1").html( res[6]               );   
+                 $("#tbl01xC1").html( web3.toAscii(res[0]) );   
+                 $("#tbl01xD1").html( web3.toAscii(res[2]) );   
+                 $("#tbl01xE1").html( web3.toAscii(res[3]) );   
+                 $("#tbl01xF1").html( web3.toAscii(res[1]) );                                       
+                 $("#tbl01xG1").html( (res[4]) + ' €'      );                                                                        
+                 $("#tbl01xH1").html( bill                  );                                                                        
+           }  
+        });   
+
+    CarChain.displayMyCar((2),(err, res) => {
+			var bill = '<font color="red"> unpaid </font>';
+			if (res[5] == true) {bill = 'paid';} 
+			if (res[4] == 0      ) {bill = 'none';} 
+           
+           if (res) {
+                 $("#tbl01xA2").html( ' 2:'                 );   
+                 $("#tbl01xB2").html( res[6]               );   
+                 $("#tbl01xC2").html( web3.toAscii(res[0]) );   
+                 $("#tbl01xD2").html( web3.toAscii(res[2]) );   
+                 $("#tbl01xE2").html( web3.toAscii(res[3]) );   
+                 $("#tbl01xF2").html( web3.toAscii(res[1]) );                                       
+                 $("#tbl01xG2").html( (res[4]) + ' €'      );                                                                        
+                 $("#tbl01xH2").html( bill                  );    
+           }  
+        });   
+
+    CarChain.displayMyCar((3),(err, res) => {
+			var bill = '<font color="red"> unpaid </font>';
+			if (res[5] == true) {bill = 'paid';} 
+			if (res[4] == 0      ) {bill = 'none';} 
+           
+           if (res) {
+                 $("#tbl01xA3").html( ' 3:'                 );   
+                 $("#tbl01xB3").html( res[6]               );   
+                 $("#tbl01xC3").html( web3.toAscii(res[0]) );   
+                 $("#tbl01xD3").html( web3.toAscii(res[2]) );   
+                 $("#tbl01xE3").html( web3.toAscii(res[3]) );   
+                 $("#tbl01xF3").html( web3.toAscii(res[1]) );                                       
+                 $("#tbl01xG3").html( (res[4]) + ' €'      );                                                                        
+                 $("#tbl01xH3").html( bill                  );                                                                        
+           }  
+        });   
+
+    CarChain.displayMyCar((4),(err, res) => {
+			var bill = '<font color="red"> unpaid </font>';
+			if (res[5] == true) {bill = 'paid';} 
+			if (res[4] == 0      ) {bill = 'none';} 
+           
+           if (res) {
+                 $("#tbl01xA4").html( ' 4:'                 );   
+                 $("#tbl01xB4").html( res[6]               );   
+                 $("#tbl01xC4").html( web3.toAscii(res[0]) );   
+                 $("#tbl01xD4").html( web3.toAscii(res[2]) );   
+                 $("#tbl01xE4").html( web3.toAscii(res[3]) );   
+                 $("#tbl01xF4").html( web3.toAscii(res[1]) );                                       
+                 $("#tbl01xG4").html( (res[4]) + ' €'      );                                                                        
+                 $("#tbl01xH4").html( bill                  );                                                                        
+           }  
+        });   
+
+    CarChain.displayMyCar((5),(err, res) => {
+			var bill = '<font color="red"> unpaid </font>';
+			if (res[5] == true) {bill = 'paid';} 
+			if (res[4] == 0      ) {bill = 'none';} 
+           
+           if (res) {
+                 $("#tbl01xA5").html( ' 5:'                 );   
+                 $("#tbl01xB5").html( res[6]               );   
+                 $("#tbl01xC5").html( web3.toAscii(res[0]) );   
+                 $("#tbl01xD5").html( web3.toAscii(res[2]) );   
+                 $("#tbl01xE5").html( web3.toAscii(res[3]) );   
+                 $("#tbl01xF5").html( web3.toAscii(res[1]) );                                       
+                 $("#tbl01xG5").html( (res[4]) + ' €'      );                                                                        
+                 $("#tbl01xH5").html( bill                  );                                                                        
+           }  
+        });   
+
+    CarChain.displayMyCar((6),(err, res) => {
+			var bill = '<font color="red"> unpaid </font>';
+			if (res[5] == true) {bill = 'paid';} 
+			if (res[4] == 0      ) {bill = 'none';} 
+           
+           if (res) {
+                 $("#tbl01xA6").html( ' 6:'                 );   
+                 $("#tbl01xB6").html( res[6]               );   
+                 $("#tbl01xC6").html( web3.toAscii(res[0]) );   
+                 $("#tbl01xD6").html( web3.toAscii(res[2]) );   
+                 $("#tbl01xE6").html( web3.toAscii(res[3]) );   
+                 $("#tbl01xF6").html( web3.toAscii(res[1]) );                                       
+                 $("#tbl01xG6").html( (res[4]) + ' €'      );                                                                        
+                 $("#tbl01xH6").html( bill                  );                                                                        
+           }  
+        });   
+
+    CarChain.displayMyCar((7),(err, res) => {
+			var bill = '<font color="red"> unpaid </font>';
+			if (res[5] == true) {bill = 'paid';} 
+			if (res[4] == 0      ) {bill = 'none';} 
+           
+           if (res) {
+                 $("#tbl01xA7").html( ' 7:'                 );   
+                 $("#tbl01xB7").html( res[6]               );   
+                 $("#tbl01xC7").html( web3.toAscii(res[0]) );   
+                 $("#tbl01xD7").html( web3.toAscii(res[2]) );   
+                 $("#tbl01xE7").html( web3.toAscii(res[3]) );   
+                 $("#tbl01xF7").html( web3.toAscii(res[1]) );                                       
+                 $("#tbl01xG7").html( (res[4]) + ' €'      );                                                                        
+                 $("#tbl01xH7").html( bill                  );                                                                        
+           }  
+        });   
+
+    CarChain.displayMyCar((8),(err, res) => {
+			var bill = '<font color="red"> unpaid </font>';
+			if (res[5] == true) {bill = 'paid';} 
+			if (res[4] == 0      ) {bill = 'none';} 
+           
+           if (res) {
+                 $("#tbl01xA8").html( ' 8:'                 );   
+                 $("#tbl01xB8").html( res[6]               );   
+                 $("#tbl01xC8").html( web3.toAscii(res[0]) );   
+                 $("#tbl01xD8").html( web3.toAscii(res[2]) );   
+                 $("#tbl01xE8").html( web3.toAscii(res[3]) );   
+                 $("#tbl01xF8").html( web3.toAscii(res[1]) );                                       
+                 $("#tbl01xG8").html( (res[4]) + ' €'      );                                                                        
+                 $("#tbl01xH8").html( bill                  );                                                                        
+           }  
+        });   
+
+    CarChain.displayMyCar((9),(err, res) => {
+			var bill = '<font color="red"> unpaid </font>';
+			if (res[5] == true) {bill = 'paid';} 
+			if (res[4] == 0      ) {bill = 'none';} 
+           
+           if (res) {
+                 $("#tbl01xA9").html( ' 9:'                 );   
+                 $("#tbl01xB9").html( res[6]               );   
+                 $("#tbl01xC9").html( web3.toAscii(res[0]) );   
+                 $("#tbl01xD9").html( web3.toAscii(res[2]) );   
+                 $("#tbl01xE9").html( web3.toAscii(res[3]) );   
+                 $("#tbl01xF9").html( web3.toAscii(res[1]) );                                       
+                 $("#tbl01xG9").html( (res[4]) + ' €'      );                                                                        
+                 $("#tbl01xH9").html( bill                  );                                                                        
+           }  
+        });   
+  
+   
+    //End of car details table /////////////////////////////////////////
+   }// End of function displayMyCars
+            
+    //Milage table/////////////////////////////////////////
+	function showMilageTable(theCarAdr)  {      
+        
+        CarChain.displayCar(theCarAdr,(err, res) => {
+           if (res) {
+                $("#carDetails2").html( 
+     					   'your car '+   web3.toAscii(res[4]) +' serial number '+  web3.toAscii(res[5]) + ' has registered the following milage entries: <br><br>' 
+                 ); 
+           }  
+        }); 		   
+
+
+        
+        entryNo=0;
+   
+        CarChain.getMilage(theCarAdr,entryNo,(err, res) => {
+           if (res) {
+                 $("#tbl05xA1").html(' ' + 0);   
+                 var dateTime = new Date(res[1]*1000);                 
+                 if (res[1] !=0) {
+                    $("#tbl05xB1").html( dateTime.toLocaleDateString()); 
+                    $("#production_date").html( dateTime.toLocaleDateString()); 
+                     
+                    $("#tbl05xC1").html(' ' + res[0] +' km');  
+                 } else {
+                   $("#tbl05xB1").html( '---'); 
+                   $("#tbl05xC1").html('---'); 
+                 }
+          }  
+        });   
+        entryNo++;
+
+        CarChain.getMilage(theCarAdr,entryNo,(err, res) => {
+           if (res) {
+                 $("#tbl05xA2").html(' ' + 1);   
+                 var dateTime = new Date(res[1]*1000);                 
+                 if (res[1] !=0) {
+                    $("#tbl05xB2").html( dateTime.toLocaleDateString()); 
+                    $("#tbl05xC2").html(' ' + res[0] +' km');  
+                 } else {
+                   $("#tbl05xB2").html( '---'); 
+                   $("#tbl05xC2").html('---'); 
+                 }
+                 
+                    
+           }  
+        });   
+        entryNo++;
+
+        CarChain.getMilage(theCarAdr,entryNo,(err, res) => {
+           if (res) {
+                 $("#tbl05xA3").html(' ' + 2);   
+                 var dateTime = new Date(res[1]*1000);                 
+                 if (res[1] !=0) {
+                    $("#tbl05xB3").html( dateTime.toLocaleDateString()); 
+                    $("#tbl05xC3").html(' ' + res[0] +' km');  
+                 } else {
+                   $("#tbl05xB3").html( '---'); 
+                   $("#tbl05xC3").html('---'); 
+                 }
+           }  
+        });   
+        entryNo++;
+
+        CarChain.getMilage(theCarAdr,entryNo,(err, res) => {
+           if (res) {
+                 $("#tbl05xA4").html(' ' + 3);   
+                 var dateTime = new Date(res[1]*1000);                 
+                 if (res[1] !=0) {
+                    $("#tbl05xB4").html( dateTime.toLocaleDateString()); 
+                    $("#tbl05xC4").html(' ' + res[0] +' km');  
+                 } else {
+                   $("#tbl05xB4").html( '---'); 
+                   $("#tbl05xC4").html('---'); 
+                 }         
+           }  
+        });   
+        entryNo++;
+
+       CarChain.getMilage(theCarAdr,entryNo,(err, res) => {
+           if (res) {
+                 $("#tbl05xA5").html(' ' + 4);   
+                 var dateTime = new Date(res[1]*1000);                 
+                 if (res[1] !=0) {
+                    $("#tbl05xB5").html( dateTime.toLocaleDateString()); 
+                    $("#tbl05xC5").html(' ' + res[0] +' km');  
+                 } else {
+                   $("#tbl05xB5").html( '---'); 
+                   $("#tbl05xC5").html('---'); 
+                 }
+           }  
+        });   
+        entryNo++;
+        
+       CarChain.getMilage(theCarAdr,entryNo,(err, res) => {
+           if (res) {
+                 $("#tbl05xA6").html(' ' + 5);   
+                 var dateTime = new Date(res[1]*1000);                 
+                 if (res[1] !=0) {
+                    $("#tbl05xB6").html( dateTime.toLocaleDateString()); 
+                    $("#tbl05xC6").html(' ' + res[0] +' km');  
+                 } else {
+                   $("#tbl05xB6").html( '---'); 
+                   $("#tbl05xC6").html('---'); 
+                 }
+           }  
+        });   
+        entryNo++;
+
+        
+
+       CarChain.getMilage(theCarAdr,entryNo,(err, res) => {
+           if (res) {
+                 $("#tbl05xA7").html(' ' + 6);   
+                 var dateTime = new Date(res[1]*1000);                 
+                 if (res[1] !=0) {
+                    $("#tbl05xB7").html( dateTime.toLocaleDateString()); 
+                    $("#tbl05xC7").html(' ' + res[0] +' km');  
+                 } else {
+                   $("#tbl05xB7").html( '---'); 
+                   $("#tbl05xC7").html('---'); 
+                 }
+           }  
+        });   
+        entryNo++;
+
+       CarChain.getMilage(theCarAdr,entryNo,(err, res) => {
+           if (res) {
+                 $("#tbl05xA8").html(' ' + 7);   
+                 var dateTime = new Date(res[1]*1000);                 
+                 if (res[1] !=0) {
+                    $("#tbl05xB8").html( dateTime.toLocaleDateString()); 
+                    $("#tbl05xC8").html(' ' + res[0] +' km');  
+                 } else {
+                   $("#tbl05xB8").html( '---'); 
+                   $("#tbl05xC8").html('---'); 
+                 }
+           }  
+        });   
+        entryNo++;
+       
+
+       CarChain.getMilage(theCarAdr,entryNo,(err, res) => {
+           if (res) {
+                 $("#tbl05xA9").html(' ' + 8);   
+                 var dateTime = new Date(res[1]*1000);                 
+                 if (res[1] !=0) {
+                    $("#tbl05xB9").html( dateTime.toLocaleDateString()); 
+                    $("#tbl05xC9").html(' ' + res[0] +' km');  
+                 } else {
+                   $("#tbl05xB9").html( '---'); 
+                   $("#tbl05xC9").html('---'); 
+                 }
+           }  
+        });   
+        entryNo++;
+
+       CarChain.getMilage(theCarAdr,entryNo,(err, res) => {
+           if (res) {
+                 $("#tbl05xA10").html(' ' + 9);   
+                 var dateTime = new Date(res[1]*1000);                 
+                 if (res[1] !=0) {
+                    $("#tbl05xB10").html( dateTime.toLocaleDateString()); 
+                    $("#tbl05xC10").html(' ' + res[0] +' km');  
+                 } else {
+                   $("#tbl05xB10").html( '---'); 
+                   $("#tbl05xC10").html('---'); 
+                 }
+           }  
+        });   
+        entryNo++;
+
+         
+    //end of milage table//////////////////////////////////////
+	} // end of function show milage table /////////////////////
+
+    
+	//Spare part table/////////////////////////////////////////
+	function showSparePartTable(theCarAdr)  {      
+        
+   	CarChain.displayCar(theCarAdr,(err, res) => {
+           if (res) {
+                $("#carDetails3").html( 
+     					   'your car '+   web3.toAscii(res[4]) +' serial number '+  web3.toAscii(res[5]) + ' has registered the following spare parts: <br><br>' 
+                 ); 
+           }  
+		}); 		   
+
+ 
+        
+        
+        entryNo=0;
+   
+        CarChain.getPart(theCarAdr,entryNo,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[2]*1000);                 
+                 if (res[2] !=0) {
+                    $("#tbl02xA0").html( dateTime.toLocaleDateString()); 
+                    $("#tbl02xB0").html(' ' + web3.toAscii(res[1]) );  
+                    $("#tbl02xC0").html(' ' + web3.toAscii(res[0]) );  
+                    $("#tbl02xD0").html(' ' + web3.toAscii(res[3]) );  
+                   } else {
+                   $("#tbl02xA0").html('---'); 
+                   $("#tbl02xB0").html('---'); 
+                   $("#tbl02xC0").html('---'); 
+                   $("#tbl02xD0").html('---'); 
+                 }
+          }  
+        });   
+        entryNo++;
+
+        CarChain.getPart(theCarAdr,entryNo,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[2]*1000);                 
+                 if (res[2] !=0) {
+                    $("#tbl02xA1").html( dateTime.toLocaleDateString()); 
+                    $("#tbl02xB1").html(' ' + web3.toAscii(res[1]) );  
+                    $("#tbl02xC1").html(' ' + web3.toAscii(res[0]) );  
+                    $("#tbl02xD1").html(' ' + web3.toAscii(res[3]) );  
+                   } else {
+                    $("#tbl02xA1").html('---'); 
+                    $("#tbl02xB1").html('---'); 
+                    $("#tbl02xC1").html('---'); 
+                    $("#tbl02xD1").html('---'); 
+                 }
+          }  
+        });   
+        entryNo++;
+
+        CarChain.getPart(theCarAdr,entryNo,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[2]*1000);                 
+                 if (res[2] !=0) {
+                    $("#tbl02xA2").html( dateTime.toLocaleDateString()); 
+                    $("#tbl02xB2").html(' ' + web3.toAscii(res[1]) );  
+                    $("#tbl02xC2").html(' ' + web3.toAscii(res[0]) );  
+                    $("#tbl02xD2").html(' ' + web3.toAscii(res[3]) );  
+                   } else {
+                    $("#tbl02xA2").html('---'); 
+                    $("#tbl02xB2").html('---'); 
+                    $("#tbl02xC2").html('---'); 
+                    $("#tbl02xD2").html('---'); 
+                 }
+          }  
+        });   
+        entryNo++;
+
+        CarChain.getPart(theCarAdr,entryNo,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[2]*1000);                 
+                 if (res[2] !=0) {
+                    $("#tbl02xA3").html( dateTime.toLocaleDateString()); 
+                    $("#tbl02xB3").html(' ' + web3.toAscii(res[1]) );  
+                    $("#tbl02xC3").html(' ' + web3.toAscii(res[0]) );  
+                    $("#tbl02xD3").html(' ' + web3.toAscii(res[3]) );  
+                   } else {
+                    $("#tbl02xA3").html('---'); 
+                    $("#tbl02xB3").html('---'); 
+                    $("#tbl02xC3").html('---'); 
+                    $("#tbl02xD3").html('---'); 
+                   }
+          }  
+        });   
+        entryNo++;
+
+        CarChain.getPart(theCarAdr,entryNo,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[2]*1000);                 
+                 if (res[2] !=0) {
+                    $("#tbl02xA4").html( dateTime.toLocaleDateString()); 
+                    $("#tbl02xB4").html(' ' + web3.toAscii(res[1]) );  
+                    $("#tbl02xC4").html(' ' + web3.toAscii(res[0]) );  
+                    $("#tbl02xD4").html(' ' + web3.toAscii(res[3]) );  
+                   } else {
+                    $("#tbl02xA4").html('---'); 
+                    $("#tbl02xB4").html('---'); 
+                    $("#tbl02xC4").html('---'); 
+                    $("#tbl02xD4").html('---'); 
+                   }
+          }  
+        });   
+        entryNo++;
+
+
+        CarChain.getPart(theCarAdr,entryNo,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[2]*1000);                 
+                 if (res[2] !=0) {
+                    $("#tbl02xA5").html( dateTime.toLocaleDateString()); 
+                    $("#tbl02xB5").html(' ' + web3.toAscii(res[1]) );  
+                    $("#tbl02xC5").html(' ' + web3.toAscii(res[0]) );  
+                    $("#tbl02xD5").html(' ' + web3.toAscii(res[3]) );  
+                   } else {
+                    $("#tbl02xA5").html('---'); 
+                    $("#tbl02xB5").html('---'); 
+                    $("#tbl02xC5").html('---'); 
+                    $("#tbl02xD5").html('---'); 
+                   }
+          }  
+        });   
+        entryNo++;
+
+        CarChain.getPart(theCarAdr,entryNo,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[2]*1000);                 
+                 if (res[2] !=0) {
+                    $("#tbl02xA6").html( dateTime.toLocaleDateString()); 
+                    $("#tbl02xB6").html(' ' + web3.toAscii(res[1]) );  
+                    $("#tbl02xC6").html(' ' + web3.toAscii(res[0]) );  
+                    $("#tbl02xD6").html(' ' + web3.toAscii(res[3]) );  
+                   } else {
+                    $("#tbl02xA6").html('---'); 
+                    $("#tbl02xB6").html('---'); 
+                    $("#tbl02xC6").html('---'); 
+                    $("#tbl02xD6").html('---'); 
+                   }
+          }  
+        });   
+        entryNo++;
+
+        CarChain.getPart(theCarAdr,entryNo,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[2]*1000);                 
+                 if (res[2] !=0) {
+                    $("#tbl02xA7").html( dateTime.toLocaleDateString()); 
+                    $("#tbl02xB7").html(' ' + web3.toAscii(res[1]) );  
+                    $("#tbl02xC7").html(' ' + web3.toAscii(res[0]) );  
+                    $("#tbl02xD7").html(' ' + web3.toAscii(res[3]) );  
+                   } else {
+                    $("#tbl02xA7").html('---'); 
+                    $("#tbl02xB7").html('---'); 
+                    $("#tbl02xC7").html('---'); 
+                    $("#tbl02xD7").html('---'); 
+                   }
+          }  
+        });   
+        entryNo++;
+
+        CarChain.getPart(theCarAdr,entryNo,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[2]*1000);                 
+                 if (res[2] !=0) {
+                    $("#tbl02xA8").html( dateTime.toLocaleDateString()); 
+                    $("#tbl02xB8").html(' ' + web3.toAscii(res[1]) );  
+                    $("#tbl02xC8").html(' ' + web3.toAscii(res[0]) );  
+                    $("#tbl02xD8").html(' ' + web3.toAscii(res[3]) );  
+                   } else {
+                    $("#tbl02xA8").html('---'); 
+                    $("#tbl02xB8").html('---'); 
+                    $("#tbl02xC8").html('---'); 
+                    $("#tbl02xD8").html('---'); 
+                   }
+          }  
+        });   
+        entryNo++;
+
+        CarChain.getPart(theCarAdr,entryNo,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[2]*1000);                 
+                 if (res[2] !=0) {
+                    $("#tbl02xA9").html( dateTime.toLocaleDateString()); 
+                    $("#tbl02xB9").html(' ' + web3.toAscii(res[1]) );  
+                    $("#tbl02xC9").html(' ' + web3.toAscii(res[0]) );  
+                    $("#tbl02xD9").html(' ' + web3.toAscii(res[3]) );  
+                   } else {
+                    $("#tbl02xA9").html('---'); 
+                    $("#tbl02xB9").html('---'); 
+                    $("#tbl02xC9").html('---'); 
+                    $("#tbl02xD9").html('---'); 
+                   }
+          }  
+        });   
+        entryNo++;
+
+         // End of parts table /////////////////////////////////////////////////// 
+		}  // End of function show spare part table ////////////////////////////////  
+      
+         
+         
+      //Inspection  table/////////////////////////////////////////
+		function showRepairTable(theCarAdr)  {      
+        
+        
+      	CarChain.displayCar(theCarAdr,(err, res) => {
+         	if (res) {
+                $("#carDetails4").html( 
+     					   'your car '+   web3.toAscii(res[4]) +' serial number '+  web3.toAscii(res[5]) + ' has documented the following inspections: <br><br>' 
+                 ); 
+				}  
+			}); 		   
+
+        entryno=0;
+   
+        CarChain.getRepair(theCarAdr,entryno,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[0]*1000);   
+                 var paid
+                 if (res[5]==true) paid='paid'; else { paid= '<font color="red"> unpaid </font>'  }
+                 if (res[4]== 0) paid='none';
+                               
+                 if (res[0] !=0) {
+                    $("#tbl03xA0").html(' 0.'                         ); 
+                    $("#tbl03xB0").html( dateTime.toLocaleDateString()); 
+                    $("#tbl03xC0").html(' ' + web3.toAscii(res[1])    );    
+                    $("#tbl03xD0").html(' ' + web3.toAscii(res[2])    );    
+                    $("#tbl03xE0").html(' ' + web3.toAscii(res[3])    );    
+                    $("#tbl03xF0").html(' ' + (res[4])  +' €'         ); 
+                    $("#tbl03xG0").html(' ' + (paid   )               ); 
+                    
+                   } else {
+                    $("#tbl03xA0").html('---'); 
+               
+                 }
+          }  
+        });   
+        entryno++;          
+   
+
+        CarChain.getRepair(theCarAdr,entryno,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[0]*1000);   
+                 var paid
+                 if (res[5]==true) paid='paid'; else { paid= '<font color="red"> unpaid </font>'  }
+                 if (res[4]== 0) paid='none';
+                               
+                 if (res[0] !=0) {
+                    $("#tbl03xA1").html(' 1.'                         ); 
+                    $("#tbl03xB1").html( dateTime.toLocaleDateString()); 
+                    $("#tbl03xC1").html(' ' + web3.toAscii(res[1])    );    
+                    $("#tbl03xD1").html(' ' + web3.toAscii(res[2])    );    
+                    $("#tbl03xE1").html(' ' + web3.toAscii(res[3])    );    
+                    $("#tbl03xF1").html(' ' + (res[4])  +' €'         ); 
+                    $("#tbl03xG1").html(' ' + (paid   )               ); 
+                       
+             
+                    
+                   } else {
+                    $("#tbl03xA1").html('---'); 
+                    $("#tbl03xB1").html('---'); 
+                    $("#tbl03xC1").html('---'); 
+                    $("#tbl03xD1").html('---'); 
+                    $("#tbl03xE1").html('---'); 
+                    $("#tbl03xF1").html('---'); 
+                    $("#tbl03xG1").html('---'); 
+                 }
+          }  
+        });   
+        entryno++;          
+ 
+  
+        CarChain.getRepair(theCarAdr,entryno,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[0]*1000);   
+                 var paid
+                 if (res[5]==true) paid='paid'; else { paid= '<font color="red"> unpaid </font>'  }
+                 if (res[4]== 0) paid='none';
+                               
+                 if (res[0] !=0) {
+                    $("#tbl03xA2").html(' 2.'                         ); 
+                    $("#tbl03xB2").html( dateTime.toLocaleDateString()); 
+                    $("#tbl03xC2").html(' ' + web3.toAscii(res[1])    );    
+                    $("#tbl03xD2").html(' ' + web3.toAscii(res[2])    );    
+                    $("#tbl03xE2").html(' ' + web3.toAscii(res[3])    );    
+                    $("#tbl03xF2").html(' ' + (res[4])  +' €'         ); 
+                    $("#tbl03xG2").html(' ' + (paid   )               ); 
+                       
+             
+                    
+                   } else {
+                    $("#tbl03xA2").html('---'); 
+                    $("#tbl03xB2").html('---'); 
+                    $("#tbl03xC2").html('---'); 
+                    $("#tbl03xD2").html('---'); 
+                    $("#tbl03xE2").html('---'); 
+                    $("#tbl03xF2").html('---'); 
+                    $("#tbl03xG2").html('---'); 
+                 }
+          }  
+        });   
+        entryno++;          
+ 
+  
+        CarChain.getRepair(theCarAdr,entryno,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[0]*1000);   
+                 var paid
+                 if (res[5]==true) paid='paid'; else { paid= '<font color="red"> unpaid </font>'  }
+                 if (res[4]== 0) paid='none';
+                               
+                 if (res[0] !=0) {
+                    $("#tbl03xA3").html(' 3.'                         ); 
+                    $("#tbl03xB3").html( dateTime.toLocaleDateString()); 
+                    $("#tbl03xC3").html(' ' + web3.toAscii(res[1])    );    
+                    $("#tbl03xD3").html(' ' + web3.toAscii(res[2])    );    
+                    $("#tbl03xE3").html(' ' + web3.toAscii(res[3])    );    
+                    $("#tbl03xF3").html(' ' + (res[4])  +' €'         ); 
+                    $("#tbl03xG3").html(' ' + (paid   )               ); 
+                       
+             
+                    
+                   } else {
+                    $("#tbl03xA3").html('---'); 
+                    $("#tbl03xB3").html('---'); 
+                    $("#tbl03xC3").html('---'); 
+                    $("#tbl03xD3").html('---'); 
+                    $("#tbl03xE3").html('---'); 
+                    $("#tbl03xF3").html('---'); 
+                    $("#tbl03xG3").html('---'); 
+                 }
+          }  
+        });   
+        entryno++;          
+ 
+  
+        CarChain.getRepair(theCarAdr,entryno,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[0]*1000);   
+                 var paid
+                 if (res[5]==true) paid='paid'; else { paid= '<font color="red"> unpaid </font>'  }
+                 if (res[4]== 0) paid='none';
+                               
+                 if (res[0] !=0) {
+                    $("#tbl03xA4").html(' 4.'                         ); 
+                    $("#tbl03xB4").html( dateTime.toLocaleDateString()); 
+                    $("#tbl03xC4").html(' ' + web3.toAscii(res[1])    );    
+                    $("#tbl03xD4").html(' ' + web3.toAscii(res[2])    );    
+                    $("#tbl03xE4").html(' ' + web3.toAscii(res[3])    );    
+                    $("#tbl03xF4").html(' ' + (res[4])  +' €'         ); 
+                    $("#tbl03xG4").html(' ' + (paid   )               ); 
+                       
+             
+                    
+                   } else {
+                    $("#tbl03xA4").html('---'); 
+                    $("#tbl03xB4").html('---'); 
+                    $("#tbl03xC4").html('---'); 
+                    $("#tbl03xD4").html('---'); 
+                    $("#tbl03xE4").html('---'); 
+                    $("#tbl03xF4").html('---'); 
+                    $("#tbl03xG4").html('---'); 
+                 }
+          }  
+        });   
+        entryno++;          
+ 
+  
+        CarChain.getRepair(theCarAdr,entryno,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[0]*1000);   
+                 var paid
+                 if (res[5]==true) paid='paid'; else { paid= '<font color="red"> unpaid </font>'  }
+                 if (res[4]== 0) paid='none';
+                               
+                 if (res[0] !=0) {
+                    $("#tbl03xA5").html(' 5.'                         ); 
+                    $("#tbl03xB5").html( dateTime.toLocaleDateString()); 
+                    $("#tbl03xC5").html(' ' + web3.toAscii(res[1])    );    
+                    $("#tbl03xD5").html(' ' + web3.toAscii(res[2])    );    
+                    $("#tbl03xE5").html(' ' + web3.toAscii(res[3])    );    
+                    $("#tbl03xF5").html(' ' + (res[4])  +' €'         ); 
+                    $("#tbl03xG5").html(' ' + (paid   )               ); 
+                       
+             
+                    
+                   } else {
+                    $("#tbl03xA5").html('---'); 
+                    $("#tbl03xB5").html('---'); 
+                    $("#tbl03xC5").html('---'); 
+                    $("#tbl03xD5").html('---'); 
+                    $("#tbl03xE5").html('---'); 
+                    $("#tbl03xF5").html('---'); 
+                    $("#tbl03xG5").html('---'); 
+                 }
+          }  
+        });   
+        entryno++;          
+ 
+  
+        CarChain.getRepair(theCarAdr,entryno,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[0]*1000);   
+                 var paid
+                 if (res[5]==true) paid='paid'; else { paid= '<font color="red"> unpaid </font>'  }
+                 if (res[4]== 0) paid='none';
+                               
+                 if (res[0] !=0) {
+                    $("#tbl03xA6").html(' 6.'                         ); 
+                    $("#tbl03xB6").html( dateTime.toLocaleDateString()); 
+                    $("#tbl03xC6").html(' ' + web3.toAscii(res[1])    );    
+                    $("#tbl03xD6").html(' ' + web3.toAscii(res[2])    );    
+                    $("#tbl03xE6").html(' ' + web3.toAscii(res[3])    );    
+                    $("#tbl03xF6").html(' ' + (res[4])  +' €'         ); 
+                    $("#tbl03xG6").html(' ' + (paid   )               ); 
+                       
+             
+                    
+                   } else {
+                    $("#tbl03xA6").html('---'); 
+                    $("#tbl03xB6").html('---'); 
+                    $("#tbl03xC6").html('---'); 
+                    $("#tbl03xD6").html('---'); 
+                    $("#tbl03xE6").html('---'); 
+                    $("#tbl03xF6").html('---'); 
+                    $("#tbl03xG6").html('---'); 
+                 }
+          }  
+        });   
+        entryno++;          
+ 
+  
+        CarChain.getRepair(theCarAdr,entryno,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[0]*1000);   
+                 var paid
+                 if (res[5]==true) paid='paid'; else { paid= '<font color="red"> unpaid </font>'  }
+                 if (res[4]== 0) paid='none';
+                               
+                 if (res[0] !=0) {
+                    $("#tbl03xA7").html(' 7.'                         ); 
+                    $("#tbl03xB7").html( dateTime.toLocaleDateString()); 
+                    $("#tbl03xC7").html(' ' + web3.toAscii(res[1])    );    
+                    $("#tbl03xD7").html(' ' + web3.toAscii(res[2])    );    
+                    $("#tbl03xE7").html(' ' + web3.toAscii(res[3])    );    
+                    $("#tbl03xF7").html(' ' + (res[4])  +' €'         ); 
+                    $("#tbl03xG7").html(' ' + (paid   )               ); 
+                       
+             
+                    
+                   } else {
+                    $("#tbl03xA7").html('---'); 
+                    $("#tbl03xB7").html('---'); 
+                    $("#tbl03xC7").html('---'); 
+                    $("#tbl03xD7").html('---'); 
+                    $("#tbl03xE7").html('---'); 
+                    $("#tbl03xF7").html('---'); 
+                    $("#tbl03xG7").html('---'); 
+                 }
+          }  
+        });   
+        entryno++;          
+ 
+  
+        CarChain.getRepair(theCarAdr,entryno,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[0]*1000);   
+                 var paid
+                 if (res[5]==true) paid='paid'; else { paid= '<font color="red"> unpaid </font>'  }
+                 if (res[4]== 0) paid='none';
+                               
+                 if (res[0] !=0) {
+                    $("#tbl03xA8").html(' 8.'                         ); 
+                    $("#tbl03xB8").html( dateTime.toLocaleDateString()); 
+                    $("#tbl03xC8").html(' ' + web3.toAscii(res[1])    );    
+                    $("#tbl03xD8").html(' ' + web3.toAscii(res[2])    );    
+                    $("#tbl03xE8").html(' ' + web3.toAscii(res[3])    );    
+                    $("#tbl03xF8").html(' ' + (res[4])  +' €'         ); 
+                    $("#tbl03xG8").html(' ' + (paid   )               ); 
+                       
+             
+                    
+                   } else {
+                    $("#tbl03xA8").html('---'); 
+                    $("#tbl03xB8").html('---'); 
+                    $("#tbl03xC8").html('---'); 
+                    $("#tbl03xD8").html('---'); 
+                    $("#tbl03xE8").html('---'); 
+                    $("#tbl03xF8").html('---'); 
+                    $("#tbl03xG8").html('---'); 
+                 }
+          }  
+        });   
+        entryno++;          
+ 
+        CarChain.getRepair(theCarAdr,entryno,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[0]*1000);   
+                 var paid
+                 if (res[5]==true) paid='paid'; else { paid= '<font color="red"> unpaid </font>'  }
+                 if (res[4]== 0) paid='none';
+                               
+                 if (res[0] !=0) {
+                    $("#tbl03xA9").html(' 9.'                         ); 
+                    $("#tbl03xB9").html( dateTime.toLocaleDateString()); 
+                    $("#tbl03xC9").html(' ' + web3.toAscii(res[1])    );    
+                    $("#tbl03xD9").html(' ' + web3.toAscii(res[2])    );    
+                    $("#tbl03xE9").html(' ' + web3.toAscii(res[3])    );    
+                    $("#tbl03xF9").html(' ' + (res[4])  +' €'         ); 
+                    $("#tbl03xG9").html(' ' + (paid   )               ); 
+                       
+             
+                    
+                   } else {
+                    $("#tbl03xA9").html('---'); 
+                    $("#tbl03xB9").html('---'); 
+                    $("#tbl03xC9").html('---'); 
+                    $("#tbl03xD9").html('---'); 
+                    $("#tbl03xE9").html('---'); 
+                    $("#tbl03xF9").html('---'); 
+                    $("#tbl03xG9").html('---'); 
+                 }
+          }  
+        });   
+        entryno++;          
+ 
+       // End of inspections table /////////////////////////////////////////////////// 
+        
+
+ 
+     // pay repair  /////////////////////////////////////////
+     $("#payRepairButton").click(
+    	function() {
+         CarChain.payRepair(theCarAdr,$("#myNo").val(), (err, res) => {
+			$("#loader").show();        	
+        		if (err) 
+            	$("#loader").hide();
+      	});
+    });
+    
+    // end of pay repair  /////////////////////////////////////////
+ 
+	} // end of function show repair table
+  
+ 
+ 
+		//Financial transaction  table////////////////////////////////////////
+		function showFinancialTable(theCarAdr)  {      
+        
+        CarChain.displayCar(theCarAdr,(err, res) => {
+           if (res) {
+            
+                $("#carDetails5").html( 
+     					   'your car '+   web3.toAscii(res[4]) +' serial number '+  web3.toAscii(res[5]) 
+     					   + ' has the following finance transactions <br><br>'+ 
+     					   'Car Account:  '  +   theCarAdr +  '<br>'
+                 ); 
+                 
+           }  
+        }); 		   
+
+       
+ 
+       web3.eth.getBalance(theCarAdr, function(error, result){
+             if(!error){
+               var myBala=result/1000000000/1000000/1000;
+               var num= myBala.toFixed(3)
+               console.log('balance'+ JSON.stringify(result))   ;
+               $("#carDetails6").html('Balance for transactions <b>' + num  + ' Ether </b>, '); 
+            }
+                
+            else
+               console.error(error);
+        });
+  
+ 
+ 
+ 
+        CarChain.balanceOf((theCarAdr),(err, res) => {
+           if (res) {
+                  $("#carDetails7").html('Car Balance for services: <b> ' + res.c +' €' + '</b><br><br>' );    
+               	$("#carDetails8").html('History transaction balance Link:  <font color="magenta"> https://rinkeby.etherscan.io/address/' +  theCarAdr +'</font><br><br>' );                    
+           }   
+        });   
+           
+            
+        
+        entryNo=0;
+   
+        CarChain.getMilage(theCarAdr,entryNo,(err, res) => {
+           if (res) {
+                 var dateTime = new Date(res[1]*1000);                 
+                 if (res[1] !=0) {
+                    $("#tbl04xA0").html( dateTime.toLocaleDateString()); 
+                    $("#tbl04xB0").html('0.00 Ether ');  
+                    $("#tbl04xC0").html('initial car acccount creation ');  
+                  }
+          }  
+        });   
+         
+         CarChain.displayCar(theCarAdr,(err, res) => {
+           if (res) {
+                $("#tbl04xD0").html( web3.toAscii(res[0] ));
+           }  
+        }); 		
+   
+        entryNo++;
+  
+
+       // End of financial transaction table /////////////////////////////////////////////////// 
+ 		} // end of function showFinancialTable()
+
+
+
+
+ 	// Main loop display Tables  /////////////////////////////////////////   
+	showLoggedInAs();
+	displayMyCars();  
+	     
+   $("#CarServices").click(function() { 
+        	var myCarAddress
+        	
+        	CarChain.getMyCarAdr($("#myCarNo").val(),(err, res) => {
+         	if (res) {
+                myCarAddress = res;
+                console.log ('selected car: ' + $("#myCarNo").val() + ' myCarAdr:' + myCarAddress)
+         	}  
+           
+                // display    
+        		CarChain.displayCar(myCarAddress,(err, res) => {
+         	  	if (res) {
+            	    console.log ('selected car: ' + res[5])
+          	 	}  
+        		}); //end display 
+
+				showSparePartTable(myCarAddress);
+				showRepairTable(myCarAddress);
+				showFinancialTable(myCarAddress);
+				showMilageTable(myCarAddress);
+        
+        
+           
+        }); // end get my car adr
+    
+	        
+        
+   }); // end button car services click
+      
+ 
+  
+    </script>
+    
+    
+</body>
+</html>

@@ -1,4 +1,16 @@
+        if (typeof web3 !== 'undefined') {
+            web3 = new Web3(web3.currentProvider);
+        } else {
+            // set the provider you want from Web3.providers
+            web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:3000"));
+        }
+
+        web3.eth.defaultAccount = web3.eth.accounts[0];
+       
+       
+        var MyContract = web3.eth.contract( 
 [
+
 	{
 		"constant": true,
 		"inputs": [
@@ -836,4 +848,12 @@
 		"stateMutability": "nonpayable",
 		"type": "function"
 	}
-]
+
+]        
+
+
+        
+          );
+        
+     var CarChain = MyContract.at('0xc5023c16a4dc1127b270e0d04d8916c1eaa3f853');
+  
